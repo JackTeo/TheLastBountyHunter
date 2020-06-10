@@ -7,7 +7,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -43, -33, 43, 33, 676, 197, 38.4896, 8.16446, -38.4896, -8.16446, 699, 259, -73, -25, 73, 25, 786, 235, 117, -28, -117, 28, 713, 500, -7, 56, 7, -56, 532, 321, 16.3289, -27.9924, -16.3289, 27.9924, 599, 297, -20, 46, 20, -46, 571, 226, 0, 0, 0, 0, 673, 195, 0, 0, 0, 0, 676, 197 )
+"points": PoolVector2Array( -43, -33, 43, 33, 676, 197, 117, -28, -117, 28, 713, 500, -7, 56, 7, -56, 532, 321, 0, 0, 0, 0, 673, 195, 0, 0, 0, 0, 676, 197 )
 }
 
 [node name="Level_1" type="Node2D"]
@@ -26,24 +26,33 @@ gun_cooldown = 0.5
 [node name="Paths" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="Paths"]
+position = Vector2( 247.091, -179.501 )
 scale = Vector2( 1, 0.995708 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
 position = Vector2( 676, 197 )
-rotation = 0.663306
+rotation = 0.705842
 
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 scale = Vector2( 0.99413, 0.995358 )
-speed = 150
+speed = 100
 health = 100
 rotation_speed = 10.0
 detect_radius = 100
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 279.924, 398.892 )
+position = Vector2( 111.503, 200.554 )
+rotation = 2.82611
 speed = 100
 health = 100
-rotation_speed = 1.0
+rotation_speed = 2.0
+detect_radius = 300
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184.633, 201.662 )
+speed = 100
+health = 100
+rotation_speed = 2.0
 detect_radius = 300
 [connection signal="shoot" from="Player" to="." method="onGunShoot"]

@@ -8,6 +8,8 @@ export (int) var detect_radius
 var target = null
 
 func _ready():
+	var circle = CircleShape2D.new()
+	$DetectRadius/CollisionShape2D.shape = circle
 	$DetectRadius/CollisionShape2D.shape.radius = detect_radius
 
 func _physics_process(delta):
@@ -24,7 +26,8 @@ func _process(delta):
 		$Body.global_rotation = current_dir.linear_interpolate(target_dir, rotation_speed * delta).angle()
 
 func _on_DetectRadius_body_entered(body):
-	target = body
+	if body.name == "Player":
+		target = body
 
 
 func _on_DetectRadius_body_exited(body):

@@ -9,10 +9,11 @@ extents = Vector2( 10, 4 )
 
 [node name="PlayerBullet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-speed = 100
+speed = 400
 damage = 10
 
 [node name="Sprite" parent="." index="0"]
+modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 flip_h = true
 region_enabled = true
