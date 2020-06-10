@@ -15,6 +15,7 @@ var alive = true
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
+	$Body.play("default")
 
 func _physics_process(delta):
 	var motion = velocity.normalized() * speed
@@ -29,8 +30,12 @@ func shoot():
 
 func take_damage(amount):
 	health -= amount
+	$Body.play("isHurt")
 	if health <= 0:
 		queue_free()
 
 func _on_GunTimer_timeout():
 	can_shoot = true
+
+func _on_Body_animation_finished():
+	$Body.play("default")
