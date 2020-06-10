@@ -16,10 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="The_Last_Bounty_Hunter"
+run/main_scene="res://Levels/Level_1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
+Hud="*res://Globals/HUD.tscn"
 GlobalFunctions="*res://Globals/global_functions.gd"
 
 [display]

@@ -37,22 +37,28 @@ rotation = 0.705842
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
 scale = Vector2( 0.99413, 0.995358 )
 speed = 100
-health = 100
+health = 10
+gun_cooldown = 1.0
 rotation_speed = 10.0
-detect_radius = 100
+detect_radius = 500
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 111.503, 200.554 )
 rotation = 2.82611
 speed = 100
-health = 100
+health = 20
+gun_cooldown = 1.0
 rotation_speed = 2.0
 detect_radius = 300
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 184.633, 201.662 )
 speed = 100
-health = 100
+health = 30
+gun_cooldown = 1.0
 rotation_speed = 2.0
 detect_radius = 300
 [connection signal="shoot" from="Player" to="." method="onGunShoot"]
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy2" to="." method="onGunShoot"]

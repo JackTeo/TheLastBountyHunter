@@ -20,3 +20,6 @@ func _on_Bullets_body_entered(body):
 	explode()
 	if body.has_method('take_damage'):
 		body.take_damage(damage)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
