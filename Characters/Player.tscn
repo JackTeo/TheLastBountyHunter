@@ -33,7 +33,6 @@ health = 100
 
 [node name="Body" parent="." index="0"]
 frames = SubResource( 1 )
-animation = "isHurt"
 offset = Vector2( 9, 0 )
 
 [node name="Muzzle" parent="Body" index="0"]
