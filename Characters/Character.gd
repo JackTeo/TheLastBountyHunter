@@ -50,7 +50,6 @@ func _on_isHurt_Timer_timeout():
 	$Body/notHurt_Timer.start()
 
 func _on_notHurt_Timer_timeout():
-	print("not hurt timer end")
 	if isHurt == false:
 		health = initial_health
 		$Body/isHurt_anime.stop()

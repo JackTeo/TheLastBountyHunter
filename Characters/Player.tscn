@@ -30,6 +30,7 @@ script = ExtResource( 1 )
 Bullet = ExtResource( 4 )
 speed = 200
 health = 100
+gun_cooldown = 0.5
 
 [node name="Body" parent="." index="0"]
 frames = SubResource( 1 )
