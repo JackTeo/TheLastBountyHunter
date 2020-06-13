@@ -21,7 +21,6 @@ func _ready():
 func _physics_process(delta):
 	var motion = velocity.normalized() * speed
 	move_and_slide(motion, velocity)
-	
 
 func shoot():
 	if can_shoot:
@@ -47,15 +46,18 @@ func _on_GunTimer_timeout():
 	can_shoot = true
 
 func _on_isHurt_Timer_timeout():
+	print("ishurt timer end")
 	isHurt = false
 	$Body/notHurt_Timer.stop()
 	$Body/notHurt_Timer.start()
+	print("not hurt timer start")
 
 func _on_notHurt_Timer_timeout():
+	print("not hurt timer end")
 	if isHurt == false:
 		health = initial_health
 		$Body/isHurt_anime.stop()
 		$Body/isHurt_anime.seek(0, true)
 		$Body/isHurt_anime.get_animation("isHurt").length = 1
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.5
-		print("full")
+		print("hp full")

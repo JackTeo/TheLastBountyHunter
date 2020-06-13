@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 4 )
 
-[node name="Bullets" instance=ExtResource( 2 )]
+[node name="EnemyBullet" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 speed = 400
 damage = 10

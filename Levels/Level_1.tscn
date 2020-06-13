@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level_1.gd" type="Script" id=4]
+[ext_resource path="res://Characters/Sniper.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -35,30 +36,17 @@ position = Vector2( 676, 197 )
 rotation = 0.705842
 
 [node name="Enemy" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 3 )]
-scale = Vector2( 0.99413, 0.995358 )
-speed = 100
-health = 10
-gun_cooldown = 1.0
-rotation_speed = 10.0
-detect_radius = 500
+position = Vector2( -3.22412, 0.120056 )
+rotation = 0.309975
+scale = Vector2( 1, 1.00431 )
+
+[node name="Sniper" parent="." instance=ExtResource( 5 )]
+position = Vector2( 544.044, 115.235 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 111.503, 200.554 )
-rotation = 2.82611
-speed = 100
-health = 20
-gun_cooldown = 1.0
-rotation_speed = 2.0
-detect_radius = 300
-
-[node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 184.633, 201.662 )
-speed = 100
-health = 30
-gun_cooldown = 1.0
-rotation_speed = 2.0
-detect_radius = 300
+position = Vector2( 104.155, 99.723 )
+rotation = 2.92538
 [connection signal="shoot" from="Player" to="." method="onGunShoot"]
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
+[connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Enemy" to="." method="onGunShoot"]
-[connection signal="shoot" from="Enemy2" to="." method="onGunShoot"]

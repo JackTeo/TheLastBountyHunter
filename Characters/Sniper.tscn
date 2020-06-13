@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Kenny/PNG/Robot 1/robot1_silencer.png" type="Texture" id=2]
+[ext_resource path="res://Characters/Sniper.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Sniper" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+speed = 50
+gun_cooldown = 5.0
+rotation_speed = 8.0
+detect_radius = 500
+
+[node name="Body" parent="." index="0"]
+frames = SubResource( 1 )
+
+[node name="Muzzle" parent="Body" index="0"]
+position = Vector2( 40, 10 )
+
+[node name="notHurt_Timer" parent="Body" index="3"]
+one_shot = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -2, 0 )
