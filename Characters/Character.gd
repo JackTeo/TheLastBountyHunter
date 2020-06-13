@@ -40,17 +40,14 @@ func take_damage(amount):
 	elif health <= 40:
 		$Body/isHurt_anime.get_animation("isHurt").length = 0.5
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.25
-	print(health)
 
 func _on_GunTimer_timeout():
 	can_shoot = true
 
 func _on_isHurt_Timer_timeout():
-	print("ishurt timer end")
 	isHurt = false
 	$Body/notHurt_Timer.stop()
 	$Body/notHurt_Timer.start()
-	print("not hurt timer start")
 
 func _on_notHurt_Timer_timeout():
 	print("not hurt timer end")
@@ -60,4 +57,3 @@ func _on_notHurt_Timer_timeout():
 		$Body/isHurt_anime.seek(0, true)
 		$Body/isHurt_anime.get_animation("isHurt").length = 1
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.5
-		print("hp full")
