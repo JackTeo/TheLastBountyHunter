@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
 signal shoot
-#signal health_changed
 signal dead
 
 export (PackedScene) var Bullet
@@ -28,6 +27,7 @@ func shoot():
 		$GunTimer.start()
 		var dir = Vector2(1, 0).rotated($Body.global_rotation - 0.01)
 		emit_signal('shoot', Bullet, $Body/Muzzle.global_position, dir)
+		$AnimationPlayer.play("muzzle_flash")
 
 func take_damage(amount):
 	isHurt = true

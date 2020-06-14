@@ -22,6 +22,7 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -6
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 101.584, 520.723 )
 rotation = -1.71072
+z_index = 0
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -38,13 +39,16 @@ rotation = 0.705842
 position = Vector2( -3.22412, 0.120056 )
 rotation = 0.309975
 scale = Vector2( 1, 1.00431 )
+z_index = 0
 
 [node name="Sniper" parent="." instance=ExtResource( 5 )]
 position = Vector2( 544.044, 115.235 )
+z_index = 0
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.155, 99.723 )
 rotation = 2.92538
+z_index = 0
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Enemy" to="." method="onGunShoot"]
