@@ -17,9 +17,9 @@ func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	initial_health = health
 
-func _physics_process(delta):
-	var motion = velocity.normalized() * speed
-	move_and_slide(motion, velocity)
+#func _physics_process(delta):
+#	var motion = velocity.normalized() * speed
+#	move_and_slide(motion, velocity)
 
 func shoot():
 	if can_shoot:
