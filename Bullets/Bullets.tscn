@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Bullets/Bullets.gd" type="Script" id=1]
+[ext_resource path="res://Effects/Explosion.tscn" type="PackedScene" id=2]
 
 [node name="Bullets" type="Area2D"]
 script = ExtResource( 1 )
@@ -11,5 +12,9 @@ region_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Explosion" parent="." instance=ExtResource( 2 )]
+visible = false
 [connection signal="body_entered" from="." to="." method="_on_Bullets_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="animation_finished" from="Explosion" to="." method="_on_Explosion_animation_finished"]

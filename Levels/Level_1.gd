@@ -4,8 +4,8 @@ onready var player = $"."/Player
 
 func _ready():
 	set_camera_limits()
-	
 	player.connect('shoot', self, 'onGunShoot')
+	Input.set_custom_mouse_cursor(load("res://Assets/UI/crossair_white.png"), Input.CURSOR_ARROW, Vector2(8, 8))
 
 func set_camera_limits():
 	var map_limits = $TileMap.get_used_rect()

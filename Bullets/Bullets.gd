@@ -14,7 +14,10 @@ func _process(delta):
 	position += velocity * delta
 
 func explode():
-	queue_free()
+	velocity = Vector2()
+	$Sprite.hide()
+	$Explosion.show()
+	$Explosion.play("smoke")
 
 func _on_Bullets_body_entered(body):
 	explode()
@@ -22,4 +25,7 @@ func _on_Bullets_body_entered(body):
 		body.take_damage(damage)
 
 func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+
+func _on_Explosion_animation_finished():
 	queue_free()
