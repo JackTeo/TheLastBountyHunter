@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/SpaceShooterRedux/Spritesheet/sheet.png" type="Texture" id=1]
+[ext_resource path="res://SpaceRelated/Ship.gd" type="Script" id=2]
+
+[node name="Ship" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 941, 112, 75 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -3.65965, -37.6845, 3.28189, -37.5743, 9.56234, -20.6061, 14.5206, -14.6562, 54.5171, 4.51569, 54.5171, 7.38046, 37.1082, 33.7143, 33.2518, 33.3837, 16.5039, 28.6458, 11.5456, 36.4689, -12.9151, 36.3587, -16.3307, 29.1968, -34.8415, 33.3837, -37.5961, 33.6041, -55.8866, 6.71936, -55.4458, 4.29533, -18.7548, -13.7747, -10.2707, -20.8265 )
