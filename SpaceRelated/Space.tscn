@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SpaceRelated/Planets/Sun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/SpaceShooterRedux/Backgrounds/black.png" type="Texture" id=3]
+[ext_resource path="res://SpaceRelated/Space.gd" type="Script" id=11]
+[ext_resource path="res://SpaceRelated/Ship.tscn" type="PackedScene" id=12]
+
+[node name="Space" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="BG" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="Sun" parent="." instance=ExtResource( 2 )]
+position = Vector2( 663.232, 296.947 )
+
+[node name="Ship" parent="." instance=ExtResource( 12 )]
+position = Vector2( 268.674, 396.358 )
+scale = Vector2( 1.00263, 1 )
