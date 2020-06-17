@@ -22,8 +22,8 @@ func _physics_process(delta):
 		acc = Vector2(thrust, 0).rotated(rot_dir)
 	else:
 		acc = Vector2(0, 0)
-#	if Input.is_action_pressed("ui_down"):
-#		rot_dir += rot_speed * delta
+	if Input.is_action_pressed("ui_down"):
+		acc += vel * -friction * 3
 	acc += vel * -friction
 	vel += acc * delta
 	pos += vel * delta
