@@ -28,10 +28,5 @@ position = Vector2( 40, 10 )
 [node name="notHurt_Timer" parent="Body" index="3"]
 one_shot = false
 
-[node name="Flash" parent="Body" index="4"]
-position = Vector2( 36, 10 )
-offset = Vector2( 38, 0 )
-region_rect = Rect2( 268, 88, 76, 42 )
-
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( -2, 0 )
