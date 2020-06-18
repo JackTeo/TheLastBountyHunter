@@ -8,6 +8,11 @@
 extents = Vector2( 10, 4 )
 
 [node name="PlayerBullet" instance=ExtResource( 1 )]
+<<<<<<< HEAD
+=======
+collision_layer = 8
+collision_mask = 5
+>>>>>>> parent of 79c02a8... added all levels template & coin
 script = ExtResource( 3 )
 speed = 400
 damage = 10
