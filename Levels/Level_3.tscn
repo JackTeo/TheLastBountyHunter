@@ -49,6 +49,10 @@ position = Vector2( 544.044, 115.235 )
 position = Vector2( 104.155, 99.723 )
 rotation = 2.92538
 z_index = 0
+
+[node name="Sniper2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 210.971, 462.378 )
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Enemy" to="." method="onGunShoot"]
+[connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]

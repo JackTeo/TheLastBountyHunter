@@ -26,9 +26,9 @@ func _process(delta):
 		var target_dir = (target.global_position - global_position).normalized()
 		var current_dir = Vector2(1, 0).rotated($Body.global_rotation)
 		$Body.global_rotation = current_dir.linear_interpolate(target_dir, rotation_speed * 0.1 * delta).angle()
-		if $".".name == "Enemy" && target_dir.dot(current_dir) > 0.98: # aiming accuracy
+		if target_dir.dot(current_dir) > 0.98: # aiming accuracy
 			shoot()
-		if $".".name == "Sniper" && target_dir.dot(current_dir) > 0.995: # aiming accuracy
+		if target_dir.dot(current_dir) > 0.995: # aiming accuracy
 			shoot()
 	else:
 		var current_dir = Vector2(1, 0).rotated($Body.global_rotation)
