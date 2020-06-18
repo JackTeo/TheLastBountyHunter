@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Kenny/door.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.0
+
+[node name="Portal" type="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 40, 334, 334 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 4 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Portal_body_entered"]

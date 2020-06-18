@@ -36,10 +36,15 @@ func take_damage(amount):
 	health -= amount
 	$Body/isHurt_anime.play("isHurt")
 	if health <= 0:
-		queue_free()
+		explode()
 	elif health <= 40:
 		$Body/isHurt_anime.get_animation("isHurt").length = 0.5
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.25
+
+func explode():
+	$Body.hide()
+	$Explosion.show()
+	$Explosion.play()
 
 func _on_GunTimer_timeout():
 	can_shoot = true
@@ -56,3 +61,6 @@ func _on_notHurt_Timer_timeout():
 		$Body/isHurt_anime.seek(0, true)
 		$Body/isHurt_anime.get_animation("isHurt").length = 1
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.5
+
+func _on_Explosion_animation_finished():
+	queue_free()
