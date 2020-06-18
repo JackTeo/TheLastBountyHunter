@@ -1,6 +1,6 @@
 extends "res://Characters/Character.gd"
 
-var acceleration = 2000
+var acceleration = 1700
 var motion = Vector2.ZERO
 
 func _physics_process(delta):
@@ -29,6 +29,6 @@ func apply_friction(amount):
 	else:
 		motion = Vector2.ZERO
 
-func apply_movement(acceleration):
-	motion += acceleration
+func apply_movement(movement):
+	motion += movement
 	motion = motion.clamped(speed)
