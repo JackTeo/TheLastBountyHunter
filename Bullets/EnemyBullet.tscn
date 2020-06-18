@@ -9,10 +9,13 @@ extents = Vector2( 10, 4 )
 
 [node name="EnemyBullet" instance=ExtResource( 2 )]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 collision_layer = 8
 collision_mask = 3
 >>>>>>> parent of 79c02a8... added all levels template & coin
+=======
+>>>>>>> parent of 95537de... update
 script = ExtResource( 3 )
 speed = 400
 damage = 10
