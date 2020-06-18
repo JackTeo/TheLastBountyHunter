@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=7 format=2]
 =======
 [gd_scene load_steps=8 format=2]
@@ -7,12 +8,16 @@
 =======
 [gd_scene load_steps=9 format=2]
 >>>>>>> parent of 79c02a8... added all levels template & coin
+=======
+[gd_scene load_steps=8 format=2]
+>>>>>>> parent of dbf4680... update
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level_1.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Sniper.tscn" type="PackedScene" id=5]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -22,6 +27,9 @@
 [ext_resource path="res://SpaceRelated/Planets/Sun.tscn" type="PackedScene" id=6]
 [ext_resource path="res://SpaceRelated/Ship.tscn" type="PackedScene" id=7]
 >>>>>>> parent of 79c02a8... added all levels template & coin
+=======
+[ext_resource path="res://Coins/Coin.tscn" type="PackedScene" id=6]
+>>>>>>> parent of dbf4680... update
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -77,10 +85,13 @@ position = Vector2( 249.85, 380.001 )
 
 [node name="Coin3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 237.5, 424.651 )
+<<<<<<< HEAD
 >>>>>>> parent of dbf4680... update
 =======
 [node name="Ship" parent="." instance=ExtResource( 7 )]
 >>>>>>> parent of 79c02a8... added all levels template & coin
+=======
+>>>>>>> parent of dbf4680... update
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]
