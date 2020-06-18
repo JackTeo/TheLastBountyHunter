@@ -1,12 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level_1.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Sniper.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Mechanics/Coin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Mechanics/Portal.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -14,7 +12,6 @@ _data = {
 }
 
 [node name="Level_1" type="Node2D"]
-z_index = 1
 script = ExtResource( 4 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -51,22 +48,6 @@ position = Vector2( 623.356, 399.825 )
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.155, 99.723 )
 rotation = 2.92538
-<<<<<<< HEAD
-=======
-z_index = 0
-
-[node name="Coin" parent="." instance=ExtResource( 6 )]
-position = Vector2( 203.3, 380.951 )
-
-[node name="Coin2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 249.85, 380.001 )
-
-[node name="Coin3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 237.5, 424.651 )
-
-[node name="Portal" parent="." instance=ExtResource( 7 )]
-position = Vector2( 544.265, -33.0978 )
->>>>>>> dbf4680215d9d3bc56433ab86f08f8ac5afcb98d
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]
