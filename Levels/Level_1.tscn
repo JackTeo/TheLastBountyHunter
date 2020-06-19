@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -36,6 +36,18 @@ extents = Vector2( 63.8162, 65.6536 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 64.5975, 64.0909 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 765.314, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 10, 377.569 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 772.347, 10 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 10, 389.289 )
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 4 )
@@ -132,6 +144,22 @@ position = Vector2( 415.68, 547.728 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 467.249, 549.291 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
+position = Vector2( 510.223, -65.6336 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
+position = Vector2( -255.502, 318.01 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
+position = Vector2( 508.661, 703.217 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
+position = Vector2( 1277.51, 318.01 )
+shape = SubResource( 13 )
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]
