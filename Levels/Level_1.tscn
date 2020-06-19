@@ -10,7 +10,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -43, -33, 43, 33, 676, 197, 117, -28, -117, 28, 713, 500, -7, 56, 7, -56, 532, 321, 0, 0, 0, 0, 673, 195, 0, 0, 0, 0, 676, 197 )
+"points": PoolVector2Array( -43, -33, 43, 33, 676, 197, 117, -28, -117, 28, 832.796, 785.745, 0, 0, 0, 0, -217.342, 810.072, 0, 0, 0, 0, -262.66, 778.683, 0, 0, 0, 0, -280.631, 722.968, -7, 56, 7, -56, -254.847, 230.948, 0, 0, 0, 0, 673, 195, 0, 0, 0, 0, 676, 197 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -28,13 +28,13 @@ extents = Vector2( 10, 189.889 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 98.1956, 10 )
 
-[sub_resource type="CircleShape2D" id=8]
+[sub_resource type="CircleShape2D" id=7]
 radius = 65.3833
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 63.8162, 65.6536 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 64.5975, 64.0909 )
 
 [node name="Level_1" type="Node2D"]
@@ -115,15 +115,15 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
 position = Vector2( -128.142, 385.207 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
 position = Vector2( -126.579, 64.0709 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
 position = Vector2( 964.189, 511.005 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="Coin4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 368.017, 547.728 )
