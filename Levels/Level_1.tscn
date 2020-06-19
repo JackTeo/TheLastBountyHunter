@@ -14,40 +14,40 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 158.36, 10 )
+extents = Vector2( 10, 389.289 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 13.0283, 187.544 )
+extents = Vector2( 772.347, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 294.315, 10 )
+extents = Vector2( 64.5975, 64.0909 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 10, 189.889 )
+extents = Vector2( 63.8162, 65.6536 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 98.1956, 10 )
 
-[sub_resource type="CircleShape2D" id=7]
-radius = 65.3833
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 189.889 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 63.8162, 65.6536 )
+extents = Vector2( 294.315, 10 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 64.5975, 64.0909 )
+extents = Vector2( 13.0283, 187.544 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 765.314, 10 )
+extents = Vector2( 158.36, 10 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 10, 377.569 )
+[sub_resource type="CircleShape2D" id=11]
+radius = 65.3833
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 772.347, 10 )
+extents = Vector2( 765.314, 10 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 10, 389.289 )
+extents = Vector2( 10, 377.569 )
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource( 4 )
@@ -103,38 +103,56 @@ position = Vector2( 146.143, 361.801 )
 [node name="Portal" parent="." instance=ExtResource( 6 )]
 position = Vector2( 415.823, 469.148 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 3
-position = Vector2( 222.685, 444.589 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1277.51, 318.01 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 68.759, 253.94 )
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 508.661, 703.217 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2( 346.921, 67.1963 )
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 964.189, 510.224 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2( 634.458, 259.409 )
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -126.579, 64.0709 )
 shape = SubResource( 5 )
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 539.915, 443.027 )
 shape = SubResource( 6 )
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
-position = Vector2( -128.142, 385.207 )
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 634.458, 259.409 )
 shape = SubResource( 7 )
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
-position = Vector2( -126.579, 64.0709 )
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 346.921, 67.1963 )
 shape = SubResource( 8 )
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
-position = Vector2( 964.189, 510.224 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 68.759, 253.94 )
 shape = SubResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+light_mask = 3
+position = Vector2( 222.685, 444.589 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -128.142, 385.207 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 510.223, -65.6336 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -255.502, 318.01 )
+shape = SubResource( 13 )
 
 [node name="Coin4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 368.017, 547.728 )
@@ -144,22 +162,6 @@ position = Vector2( 415.68, 547.728 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 467.249, 549.291 )
-
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="."]
-position = Vector2( 510.223, -65.6336 )
-shape = SubResource( 10 )
-
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="."]
-position = Vector2( -255.502, 318.01 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="."]
-position = Vector2( 508.661, 703.217 )
-shape = SubResource( 12 )
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="."]
-position = Vector2( 1277.51, 318.01 )
-shape = SubResource( 13 )
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]
