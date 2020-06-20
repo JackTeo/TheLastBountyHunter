@@ -29,11 +29,11 @@ func _on_StartBtn_pressed():
 
 
 func _on_ControlBtn_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/ControlsScreen/ControlsScreen.tscn")
 
 
 func _on_CreditBtn_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/CreditScreen/CreditScreen.tscn")
 
 
 func _on_ExitBtn_pressed():
