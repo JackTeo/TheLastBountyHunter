@@ -25,7 +25,7 @@ func _physics_process(delta):
 #	get_tree().change_scene("res://TitleScreens/IntroScene.tscn")
 
 func _on_StartBtn_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Scenes/IntroScreen/IntroScene.tscn")
 
 
 func _on_ControlBtn_pressed():
