@@ -36,10 +36,16 @@ func take_damage(amount):
 	health -= amount
 	$Body/isHurt_anime.play("isHurt")
 	if health <= 0:
-		explode()
+		if get_node(".").name == "Player":
+			dead()
+		else:
+			explode()
 	elif health <= 40:
 		$Body/isHurt_anime.get_animation("isHurt").length = 0.5
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.25
+
+func dead():
+	get_node("/root/HUD").update_healthbar(health * 100/max_health)
 
 func explode():
 	$Body.hide()
