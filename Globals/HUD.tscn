@@ -18,42 +18,121 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HContainer" type="HBoxContainer" parent="SMargin"]
+[node name="L-Container" type="HBoxContainer" parent="SMargin"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 1004.0
-margin_bottom = 580.0
+margin_right = 1260.0
+margin_bottom = 700.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="SMargin/HContainer"]
-margin_right = 84.0
-margin_bottom = 26.0
+[node name="Lives" type="Label" parent="SMargin/L-Container"]
+margin_right = 141.0
+margin_bottom = 44.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = ExtResource( 3 )
 text = "Lives: "
-align = 2
+align = 1
 uppercase = true
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Lives1" type="TextureRect" parent="SMargin/HContainer"]
-margin_left = 88.0
-margin_right = 131.0
-margin_bottom = 560.0
+[node name="Lives1" type="TextureRect" parent="SMargin/L-Container"]
+margin_left = 145.0
+margin_top = 10.0
+margin_right = 188.0
+margin_bottom = 680.0
 texture = ExtResource( 2 )
 
-[node name="Lives2" type="TextureRect" parent="SMargin/HContainer"]
-margin_left = 135.0
-margin_right = 178.0
-margin_bottom = 560.0
+[node name="Lives2" type="TextureRect" parent="SMargin/L-Container"]
+margin_left = 192.0
+margin_top = 10.0
+margin_right = 235.0
+margin_bottom = 680.0
 texture = ExtResource( 2 )
 
-[node name="Lives3" type="TextureRect" parent="SMargin/HContainer"]
-margin_left = 182.0
-margin_right = 225.0
-margin_bottom = 560.0
+[node name="Lives3" type="TextureRect" parent="SMargin/L-Container"]
+margin_left = 239.0
+margin_top = 10.0
+margin_right = 282.0
+margin_bottom = 680.0
 texture = ExtResource( 2 )
+
+[node name="M-Container" type="HBoxContainer" parent="SMargin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 700.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="SMargin/M-Container"]
+margin_left = 532.0
+margin_right = 682.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Score: "
+align = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Value" type="Label" parent="SMargin/M-Container"]
+margin_left = 686.0
+margin_right = 708.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+align = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="R-Container" type="HBoxContainer" parent="SMargin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 700.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="SMargin/R-Container"]
+margin_left = 1039.0
+margin_right = 1161.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "Time: "
+align = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Value" type="Label" parent="SMargin/R-Container"]
+margin_left = 1165.0
+margin_right = 1240.0
+margin_bottom = 44.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = ExtResource( 3 )
+text = "5:00"
+align = 1
+uppercase = true
+__meta__ = {
+"_editor_description_": ""
+}

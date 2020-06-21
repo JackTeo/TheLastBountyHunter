@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/IntroScreen/IntroScene.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/IntroScreen/BlackBG.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/IntroScreen/chatbox.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/IntroScreen/next.PNG" type="Texture" id=6]
+[ext_resource path="res://Scenes/IntroScreen/skip.PNG" type="Texture" id=7]
+[ext_resource path="res://Scenes/IntroScreen/skipF.PNG" type="Texture" id=8]
+[ext_resource path="res://Scenes/IntroScreen/nextF.PNG" type="Texture" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Fonts/romulus.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 616, 259 )
+modulate_color = Color( 1, 1, 1, 0.392157 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 11 )
+
+[node name="IntroScene" type="Node"]
+script = ExtResource( 2 )
+skip_to_scene = "res://Levels/Level_1.tscn"
+person1 = ExtResource( 10 )
+person2 = ExtResource( 10 )
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="Person1" type="Sprite" parent="."]
+position = Vector2( 251.791, 386.469 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Person2" type="Sprite" parent="."]
+position = Vector2( 1049.41, 386.469 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 400.0
+margin_right = -50.0
+margin_bottom = -20.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 30.0
+margin_right = -37.0
+margin_bottom = -66.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "aasss"
+text = "aasss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_left = 981.192
+margin_top = 238.805
+margin_right = 1342.19
+margin_bottom = 333.805
+rect_scale = Vector2( 0.4, 0.4 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextBtn" type="TextureButton" parent="Panel/HBoxContainer"]
+margin_right = 178.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 9 )
+
+[node name="SkipBtn" type="TextureButton" parent="Panel/HBoxContainer"]
+margin_left = 198.0
+margin_right = 361.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="Panel/HBoxContainer/NextBtn" to="." method="_on_NextBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/SkipBtn" to="." method="_on_SkipBtn_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
