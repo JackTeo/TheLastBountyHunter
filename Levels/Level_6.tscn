@@ -1,15 +1,28 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Level_6.gd" type="Script" id=4]
 [ext_resource path="res://Characters/Sniper.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mechanics/Coin.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( -43, -33, 43, 33, 676, 197, 117, -28, -117, 28, 713, 500, -7, 56, 7, -56, 532, 321, 0, 0, 0, 0, 673, 195, 0, 0, 0, 0, 676, 197 )
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.6629, 528.109 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 1064.1, 15.9403 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 66.4563, 63.9148 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32.663, 31.9702 )
 
 [node name="Level_6" type="Node2D"]
 z_index = 1
@@ -18,7 +31,7 @@ script = ExtResource( 4 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, 65535, 1, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 131071, 1, 0, 65536, 0, 0, 65537, 151, 0, 65538, 152, 0, 65539, 152, 0, 65540, 152, 0, 65541, 152, 0, 65542, 152, 0, 65543, 152, 0, 65544, 152, 0, 65545, 153, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 196607, 1, 0, 131072, 0, 0, 131073, 161, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 163, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 1, 0, 131087, 1, 0, 196608, 0, 0, 196609, 161, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 163, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 327679, 1, 0, 262144, 0, 0, 262145, 161, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 163, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 1, 0, 262159, 1, 0, 262160, 1, 0, 393215, 1, 0, 327680, 0, 0, 327681, 161, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327688, 0, 0, 327689, 163, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 1, 0, 327695, 1, 0, 327696, 1, 0, 458751, 1, 0, 393216, 0, 0, 393217, 171, 0, 393218, 172, 0, 393219, 172, 0, 393220, 172, 0, 393221, 172, 0, 393222, 172, 0, 393223, 172, 0, 393224, 172, 0, 393225, 173, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 524287, 1, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 1, 0, 458767, 1, 0, 458768, 1, 0, 589823, 1, 0, 524288, 1, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 655366, 0, 0, 720902, 0, 0 )
+tile_data = PoolIntArray( -131080, 27, 0, -131079, 27, 0, -131078, 27, 0, -131077, 27, 0, -131076, 27, 0, -131075, 27, 0, -131074, 27, 0, -131073, 27, 0, -196608, 27, 0, -196607, 27, 0, -196606, 27, 0, -196605, 27, 0, -196604, 27, 0, -196603, 27, 0, -196602, 27, 0, -196601, 27, 0, -196600, 27, 0, -196599, 27, 0, -196598, 27, 0, -196597, 27, 0, -196596, 27, 0, -196595, 27, 0, -196594, 27, 0, -196593, 27, 0, -196592, 27, 0, -196591, 27, 0, -196590, 27, 0, -196589, 27, 0, -196588, 27, 0, -196587, 27, 0, -196586, 27, 0, -196585, 27, 0, -196584, 27, 0, -196583, 27, 0, -65544, 27, 0, -65543, 1610612860, 0, -65542, 1610612859, 0, -65541, 1610612859, 0, -65540, 1610612859, 0, -65539, 1610612859, 0, -65538, 1610612859, 0, -65537, 1610612859, 0, -131072, 1610612859, 0, -131071, 1610612859, 0, -131070, 1610612859, 0, -131069, 1610612859, 0, -131068, 1610612859, 0, -131067, 1610612859, 0, -131066, 1610612859, 0, -131065, 1610612859, 0, -131064, 1610612859, 0, -131063, 1610612859, 0, -131062, 1610612859, 0, -131061, 1610612859, 0, -131060, 1610612859, 0, -131059, 1610612859, 0, -131058, 1610612859, 0, -131057, 1610612859, 0, -131056, 1610612859, 0, -131055, 1610612859, 0, -131054, 1610612859, 0, -131053, 1610612859, 0, -131052, 1610612859, 0, -131051, 1610612859, 0, -131050, 1610612859, 0, -131049, -1073741700, 0, -131048, 27, 0, -131047, 27, 0, -8, 27, 0, -7, -1610612613, 0, -6, 27, 0, -5, 27, 0, -4, 27, 0, -3, 27, 0, -2, 27, 0, -1, 27, 0, -65536, 27, 0, -65535, 27, 0, -65534, 27, 0, -65533, 27, 0, -65532, 27, 0, -65531, 27, 0, -65530, 27, 0, -65529, 27, 0, -65528, 27, 0, -65527, 27, 0, -65526, 27, 0, -65525, 27, 0, -65524, 27, 0, -65523, 27, 0, -65522, 27, 0, -65521, 27, 0, -65520, 27, 0, -65519, 27, 0, -65518, 27, 0, -65517, 27, 0, -65516, 27, 0, -65515, 27, 0, -65514, 27, 0, -65513, -1073741701, 0, -65512, 27, 0, -65511, 27, 0, 65528, 27, 0, 65529, -1610612613, 0, 65530, 27, 0, 65531, 65, 0, 65532, 27, 0, 65533, 65, 0, 65534, 65, 0, 65535, 27, 0, 0, 27, 0, 1, 87, 0, 2, 27, 0, 3, 27, 0, 4, 27, 0, 5, 60, 0, 6, 27, 0, 7, 27, 0, 8, 27, 0, 9, 27, 0, 10, 60, 0, 11, 27, 0, 12, 27, 0, 13, 27, 0, 14, 27, 0, 15, 87, 0, 16, 27, 0, 17, 27, 0, 18, 65, 0, 19, 65, 0, 20, 27, 0, 21, 65, 0, 22, 27, 0, 23, -1073741701, 0, 24, 27, 0, 25, 27, 0, 131064, 27, 0, 131065, -1610612613, 0, 131066, 27, 0, 131067, 27, 0, 131068, 27, 0, 131069, 27, 0, 131070, 27, 0, 131071, 27, 0, 65536, 27, 0, 65537, 27, 0, 65538, 27, 0, 65539, 27, 0, 65540, 27, 0, 65541, 27, 0, 65542, 27, 0, 65543, 27, 0, 65544, 27, 0, 65545, 27, 0, 65546, 27, 0, 65547, 27, 0, 65548, 27, 0, 65549, 27, 0, 65550, 27, 0, 65551, 27, 0, 65552, 27, 0, 65553, 27, 0, 65554, 27, 0, 65555, 27, 0, 65556, 27, 0, 65557, 27, 0, 65558, 27, 0, 65559, -1073741701, 0, 65560, 27, 0, 65561, 27, 0, 196600, 27, 0, 196601, -1610612613, 0, 196602, 27, 0, 196603, 27, 0, 196604, 60, 0, 196605, 60, 0, 196606, 27, 0, 196607, 27, 0, 131072, 27, 0, 131073, 27, 0, 131074, 27, 0, 131075, 27, 0, 131076, 27, 0, 131077, 27, 0, 131078, 27, 0, 131079, 27, 0, 131080, 27, 0, 131081, 27, 0, 131082, 27, 0, 131083, 27, 0, 131084, 27, 0, 131085, 27, 0, 131086, 27, 0, 131087, 27, 0, 131088, 27, 0, 131089, 60, 0, 131090, 60, 0, 131091, 27, 0, 131092, 27, 0, 131093, 27, 0, 131094, 27, 0, 131095, -1073741701, 0, 131096, 27, 0, 131097, 27, 0, 262136, 27, 0, 262137, -1610612613, 0, 262138, 27, 0, 262139, 27, 0, 262140, 60, 0, 262141, 60, 0, 262142, 27, 0, 262143, 27, 0, 196608, 61, 0, 196609, 27, 0, 196610, 27, 0, 196611, 27, 0, 196612, 27, 0, 196613, 27, 0, 196614, 27, 0, 196615, 27, 0, 196616, 27, 0, 196617, 27, 0, 196618, 27, 0, 196619, 61, 0, 196620, 27, 0, 196621, 27, 0, 196622, 27, 0, 196623, 27, 0, 196624, 27, 0, 196625, 60, 0, 196626, 60, 0, 196627, 27, 0, 196628, 27, 0, 196629, 27, 0, 196630, 27, 0, 196631, -1073741701, 0, 196632, 27, 0, 196633, 27, 0, 327672, 27, 0, 327673, -1610612613, 0, 327674, 27, 0, 327675, 27, 0, 327676, 27, 0, 327677, 27, 0, 327678, 27, 0, 327679, 27, 0, 262144, 27, 0, 262145, 27, 0, 262146, 27, 0, 262147, 27, 0, 262148, 27, 0, 262149, 60, 0, 262150, 60, 0, 262151, 27, 0, 262152, 27, 0, 262153, 27, 0, 262154, 27, 0, 262155, 27, 0, 262156, 27, 0, 262157, 27, 0, 262158, 27, 0, 262159, 27, 0, 262160, 27, 0, 262161, 27, 0, 262162, 27, 0, 262163, 27, 0, 262164, 27, 0, 262165, 60, 0, 262166, 27, 0, 262167, -1073741701, 0, 262168, 27, 0, 262169, 27, 0, 393208, 27, 0, 393209, -1610612613, 0, 393210, 27, 0, 393211, 60, 0, 393212, 27, 0, 393213, 27, 0, 393214, 27, 0, 393215, 27, 0, 327680, 27, 0, 327681, 60, 0, 327682, 27, 0, 327683, 27, 0, 327684, 27, 0, 327685, 60, 0, 327686, 60, 0, 327687, 27, 0, 327688, 27, 0, 327689, 27, 0, 327690, 27, 0, 327691, 27, 0, 327692, 27, 0, 327693, 60, 0, 327694, 27, 0, 327695, 27, 0, 327696, 27, 0, 327697, 27, 0, 327698, 27, 0, 327699, 27, 0, 327700, 27, 0, 327701, 27, 0, 327702, 27, 0, 327703, -1073741701, 0, 327704, 27, 0, 327705, 27, 0, 458744, 27, 0, 458745, -1610612613, 0, 458746, 27, 0, 458747, 27, 0, 458748, 27, 0, 458749, 27, 0, 458750, 27, 0, 458751, 27, 0, 393216, 27, 0, 393217, 27, 0, 393218, 27, 0, 393219, 27, 0, 393220, 27, 0, 393221, 27, 0, 393222, 27, 0, 393223, 27, 0, 393224, 61, 0, 393225, 27, 0, 393226, 27, 0, 393227, 27, 0, 393228, 27, 0, 393229, 27, 0, 393230, 27, 0, 393231, 27, 0, 393232, 61, 0, 393233, 27, 0, 393234, 27, 0, 393235, 27, 0, 393236, 27, 0, 393237, 27, 0, 393238, 27, 0, 393239, -1073741701, 0, 393240, 27, 0, 393241, 27, 0, 524280, 27, 0, 524281, -1610612613, 0, 524282, 27, 0, 524283, 27, 0, 524284, 27, 0, 524285, 27, 0, 524286, 60, 0, 524287, 60, 0, 458752, 27, 0, 458753, 27, 0, 458754, 27, 0, 458755, 27, 0, 458756, 27, 0, 458757, 27, 0, 458758, 27, 0, 458759, 27, 0, 458760, 27, 0, 458761, 27, 0, 458762, 27, 0, 458763, 27, 0, 458764, 27, 0, 458765, 27, 0, 458766, 27, 0, 458767, 27, 0, 458768, 27, 0, 458769, 27, 0, 458770, 27, 0, 458771, 60, 0, 458772, 27, 0, 458773, 27, 0, 458774, 27, 0, 458775, -1073741701, 0, 458776, 27, 0, 458777, 27, 0, 589816, 27, 0, 589817, -1610612613, 0, 589818, 27, 0, 589819, 27, 0, 589820, 27, 0, 589821, 27, 0, 589822, 60, 0, 589823, 60, 0, 524288, 27, 0, 524289, 27, 0, 524290, 27, 0, 524291, 27, 0, 524292, 27, 0, 524293, 27, 0, 524294, 27, 0, 524295, 27, 0, 524296, 27, 0, 524297, 27, 0, 524298, 27, 0, 524299, 27, 0, 524300, 60, 0, 524301, 60, 0, 524302, 27, 0, 524303, 27, 0, 524304, 27, 0, 524305, 27, 0, 524306, 27, 0, 524307, 27, 0, 524308, 27, 0, 524309, 27, 0, 524310, 27, 0, 524311, -1073741701, 0, 524312, 27, 0, 524313, 27, 0, 655352, 27, 0, 655353, -1610612613, 0, 655354, 27, 0, 655355, 27, 0, 655356, 27, 0, 655357, 27, 0, 655358, 27, 0, 655359, 27, 0, 589824, 27, 0, 589825, 27, 0, 589826, 27, 0, 589827, 27, 0, 589828, 27, 0, 589829, 27, 0, 589830, 60, 0, 589831, 27, 0, 589832, 27, 0, 589833, 27, 0, 589834, 27, 0, 589835, 27, 0, 589836, 60, 0, 589837, 60, 0, 589838, 27, 0, 589839, 27, 0, 589840, 27, 0, 589841, 27, 0, 589842, 27, 0, 589843, 27, 0, 589844, 27, 0, 589845, 27, 0, 589846, 27, 0, 589847, -1073741701, 0, 589848, 27, 0, 589849, 27, 0, 720888, 27, 0, 720889, -1610612613, 0, 720890, 27, 0, 720891, 65, 0, 720892, 27, 0, 720893, 65, 0, 720894, 65, 0, 720895, 27, 0, 655360, 27, 0, 655361, 87, 0, 655362, 27, 0, 655363, 27, 0, 655364, 61, 0, 655365, 27, 0, 655366, 27, 0, 655367, 27, 0, 655368, 27, 0, 655369, 27, 0, 655370, 61, 0, 655371, 27, 0, 655372, 27, 0, 655373, 27, 0, 655374, 27, 0, 655375, 87, 0, 655376, 27, 0, 655377, 27, 0, 655378, 65, 0, 655379, 65, 0, 655380, 27, 0, 655381, 65, 0, 655382, 27, 0, 655383, -1073741701, 0, 655384, 27, 0, 655385, 27, 0, 786424, 27, 0, 786425, -1610612613, 0, 786426, 27, 0, 786427, 27, 0, 786428, 27, 0, 786429, 27, 0, 786430, 27, 0, 786431, 27, 0, 720896, 27, 0, 720897, 27, 0, 720898, 27, 0, 720899, 27, 0, 720900, 27, 0, 720901, 27, 0, 720902, 27, 0, 720903, 27, 0, 720904, 27, 0, 720905, 27, 0, 720906, 27, 0, 720907, 27, 0, 720908, 27, 0, 720909, 27, 0, 720910, 27, 0, 720911, 27, 0, 720912, 27, 0, 720913, 27, 0, 720914, 27, 0, 720915, 27, 0, 720916, 27, 0, 720917, 27, 0, 720918, 27, 0, 720919, -1073741701, 0, 720920, 27, 0, 720921, 27, 0, 851960, 27, 0, 851961, -1610612612, 0, 851962, 123, 0, 851963, 123, 0, 851964, 123, 0, 851965, 123, 0, 851966, 123, 0, 851967, 123, 0, 786432, 123, 0, 786433, 123, 0, 786434, 123, 0, 786435, 123, 0, 786436, 123, 0, 786437, 123, 0, 786438, 123, 0, 786439, 123, 0, 786440, 123, 0, 786441, 123, 0, 786442, 123, 0, 786443, 123, 0, 786444, 123, 0, 786445, 123, 0, 786446, 123, 0, 786447, 123, 0, 786448, 123, 0, 786449, 123, 0, 786450, 123, 0, 786451, 123, 0, 786452, 123, 0, 786453, 123, 0, 786454, 123, 0, 786455, 124, 0, 786456, 27, 0, 786457, 27, 0, 917496, 27, 0, 917497, 27, 0, 917498, 27, 0, 917499, 27, 0, 917500, 27, 0, 917501, 27, 0, 917502, 27, 0, 917503, 27, 0, 851968, 27, 0, 851969, 27, 0, 851970, 27, 0, 851971, 27, 0, 851972, 27, 0, 851973, 27, 0, 851974, 27, 0, 851975, 27, 0, 851976, 27, 0, 851977, 27, 0, 851978, 27, 0, 851979, 27, 0, 851980, 27, 0, 851981, 27, 0, 851982, 27, 0, 851983, 27, 0, 851984, 27, 0, 851985, 27, 0, 851986, 27, 0, 851987, 27, 0, 851988, 27, 0, 851989, 27, 0, 851990, 27, 0, 851991, 27, 0, 851992, 27, 0, 851993, 27, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 101.584, 520.723 )
@@ -28,7 +41,7 @@ z_index = 0
 [node name="Paths" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="Paths"]
-position = Vector2( 247.091, -179.501 )
+position = Vector2( 216.268, -234.298 )
 scale = Vector2( 1, 0.995708 )
 curve = SubResource( 1 )
 
@@ -49,6 +62,311 @@ position = Vector2( 544.044, 115.235 )
 position = Vector2( 104.155, 99.723 )
 rotation = 2.92538
 z_index = 0
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 297.689, 133.876 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 597.476, 255.309 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1033.88, 289.462 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1352.64, 407.1 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1007.31, 528.533 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 309.073, 479.201 )
+rotation = 2.92538
+z_index = 0
+
+[node name="Enemy8" parent="." instance=ExtResource( 3 )]
+position = Vector2( -169.069, 376.742 )
+rotation = 2.92538
+z_index = 0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -498.511, 363.975 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1644.66, 348.426 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 574.624, -176.599 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 571.939, 876.745 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -190.802, 192.358 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 386.508, 320.482 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -61.1712, 511.914 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 835.695, 576.73 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1155.25, 190.851 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -289.409, 31.6541 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -289.409, 31.6541 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -288.057, 352.608 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -288.057, 352.608 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -285.666, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -158.908, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -94.3333, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 96.9991, 668.307 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 288.331, 673.09 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 412.698, 606.124 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 539.455, 414.791 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 733.179, 223.459 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 864.72, 352.608 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 96.9991, 350.217 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 32.4244, 223.459 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 96.9991, 32.1267 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -158.908, 32.1267 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -96.7249, 32.1267 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 350.514, 32.1267 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 670.996, 32.1267 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 670.996, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 991.829, 671.807 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D28" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1376.53, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D29" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1185.2, 670.698 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D30" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1249.78, 668.307 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D31" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1247.38, 476.975 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D32" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1053.66, 414.792 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D33" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1376.53, 290.425 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D34" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1374.14, 29.7352 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D35" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 991.478, 29.7352 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D36" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1182.81, 34.5185 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D37" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 1247.39, 34.5185 )
+shape = SubResource( 5 )
+
+[node name="Coin" parent="." instance=ExtResource( 6 )]
+
+[node name="Coin2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -7.71637, 48.013 )
+
+[node name="Coin3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -25.7213, 103.742 )
+
+[node name="Coin4" parent="." instance=ExtResource( 6 )]
+position = Vector2( -78.4638, 182.856 )
+
+[node name="Coin5" parent="." instance=ExtResource( 6 )]
+position = Vector2( -25.7213, 304.164 )
+
+[node name="Coin6" parent="." instance=ExtResource( 6 )]
+position = Vector2( -284.16, 443.053 )
+
+[node name="Coin7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -175.159, 506.344 )
+
+[node name="Coin8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 195.798, 323.503 )
+
+[node name="Coin9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 178.217, 423.714 )
+
+[node name="Coin10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 440.172, 522.167 )
+
+[node name="Coin11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 515.769, 319.987 )
+
+[node name="Coin12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 387.429, 195.163 )
+
+[node name="Coin13" parent="." instance=ExtResource( 6 )]
+position = Vector2( 455.994, 91.4357 )
+
+[node name="Coin14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 556.205, 17.5961 )
+
+[node name="Coin15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 768.934, 22.8703 )
+
+[node name="Coin16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 826.95, 158.243 )
+
+[node name="Coin17" parent="." instance=ExtResource( 6 )]
+position = Vector2( 700.368, 302.406 )
+
+[node name="Coin18" parent="." instance=ExtResource( 6 )]
+position = Vector2( 689.82, 416.682 )
+
+[node name="Coin19" parent="." instance=ExtResource( 6 )]
+position = Vector2( 549.173, 525.683 )
+
+[node name="Coin20" parent="." instance=ExtResource( 6 )]
+position = Vector2( 522.802, 652.265 )
+
+[node name="Coin21" parent="." instance=ExtResource( 6 )]
+position = Vector2( 809.37, 692.701 )
+
+[node name="Coin22" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1059.02, 625.894 )
+
+[node name="Coin23" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1138.13, 520.409 )
+
+[node name="Coin24" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1166.26, 385.036 )
+
+[node name="Coin25" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1271.75, 349.874 )
+
+[node name="Coin26" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1284.05, 263.728 )
+
+[node name="Coin27" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1277.02, 576.667 )
+
+[node name="Coin28" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1371.96, 581.942 )
+
+[node name="Coin29" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1201.42, 311.196 )
+
+[node name="Coin30" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1354.38, 210.985 )
+
+[node name="Coin31" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1291.09, 128.355 )
+
+[node name="Coin32" parent="." instance=ExtResource( 6 )]
+position = Vector2( 967.598, 126.597 )
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Enemy" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy2" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy3" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy4" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy5" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy6" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy7" to="." method="onGunShoot"]
+[connection signal="shoot" from="Enemy8" to="." method="onGunShoot"]
