@@ -1,6 +1,7 @@
 extends Node
 
 onready var player = $"."/Player
+onready var respawn_location = $Player.global_position
 
 func _ready():
 	set_camera_limits()

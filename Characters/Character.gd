@@ -1,25 +1,23 @@
 extends KinematicBody2D
 
 signal shoot
-signal dead
 
 export (PackedScene) var Bullet
 export (int) var speed
 export (int) var health
 export (float) var gun_cooldown
 
+onready var location = $".".global_position
+
 var initial_health = null
 var velocity = Vector2()
 var can_shoot = true
 var isHurt = false
+var isDead = false
 
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	initial_health = health
-
-#func _physics_process(delta):
-#	var motion = velocity.normalized() * speed
-#	move_and_slide(motion, velocity)
 
 func shoot():
 	if can_shoot:
@@ -45,7 +43,14 @@ func take_damage(amount):
 		$Body/isHurt_anime.get_animation("isHurt").step = 0.25
 
 func dead():
-	get_node("/root/HUD").update_healthbar(health * 100/max_health)
+	if (get_node("/root/Hud").update_lives() > 0):
+		$AnimationPlayer.play("play_dead")
+		$".".position = location
+		isDead = true
+		$Body/isHurt_anime.stop()
+		health = initial_health
+		yield(get_tree().create_timer($DeadTimer.wait_time),"timeout")
+		isDead = false
 
 func explode():
 	$Body.hide()
