@@ -1,12 +1,5 @@
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
@@ -17,4 +10,5 @@ func _ready():
 
 
 func _on_Coin_body_entered(body):
+	get_node("/root/Hud").update_scores(100)
 	queue_free()

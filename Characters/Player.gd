@@ -33,3 +33,12 @@ func apply_friction(amount):
 func apply_movement(movement):
 	motion += movement
 	motion = motion.clamped(speed)
+
+func shoot():
+	if can_shoot:
+		can_shoot = false
+		$GunTimer.start()
+		var dir = Vector2(1, 0).rotated($Body.global_rotation - 0.01)
+		emit_signal('shoot', Bullet, $Body/Muzzle.global_position, dir)
+		$AnimationPlayer.play("muzzle_flash")
+		get_node("/root/Hud").update_scores(-10)

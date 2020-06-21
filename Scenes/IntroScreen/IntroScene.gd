@@ -35,6 +35,7 @@ func load_dialog():
 		)
 		$Tween.start()
 	else:
+		get_node("/root/Hud").Start_Timer()
 		get_tree().change_scene("res://Levels/Level_1.tscn")
 	dialog_index += 1
 
@@ -46,4 +47,5 @@ func _on_NextBtn_pressed():
 
 
 func _on_SkipBtn_pressed():
+	get_node("/root/Hud").Start_Timer()
 	get_tree().change_scene(skip_to_scene)

@@ -56,6 +56,7 @@ func explode():
 	$Body.hide()
 	$Explosion.show()
 	$Explosion.play()
+	get_node("/root/Hud").update_scores(100)
 
 func _on_GunTimer_timeout():
 	can_shoot = true

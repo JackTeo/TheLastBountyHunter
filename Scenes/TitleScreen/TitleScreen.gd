@@ -1,9 +1,8 @@
 extends Node
 
 func _ready():
-#	set_camera_limits()
-#	get_node("/root/HUD").layer = -10
 	$MarginContainer/VBoxContainer/VBoxContainer/StartBtn.grab_focus()
+	get_node("/root/Hud").SET_SCREEN_NAME("TitleScreen")
 #	var player = AudioStreamPlayer.new()
 #	self.add_child(player)
 #	player.stream = load("res://Assets/Audio/bgm_title.wav")
@@ -20,11 +19,8 @@ func _physics_process(delta):
 	if $MarginContainer/VBoxContainer/VBoxContainer/ExitBtn.is_hovered() == true:
 		$MarginContainer/VBoxContainer/VBoxContainer/ExitBtn.grab_focus()
 
-#func _on_TextureButton_pressed():
-#	get_node("/root/HUD").update_healthbar(100)
-#	get_tree().change_scene("res://TitleScreens/IntroScene.tscn")
-
 func _on_StartBtn_pressed():
+	get_node("/root/Hud").SET_SCREEN_NAME("Level")
 	get_tree().change_scene("res://Scenes/IntroScreen/IntroScene.tscn")
 
 
