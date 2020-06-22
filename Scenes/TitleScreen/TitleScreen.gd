@@ -1,7 +1,7 @@
 extends Node
 
 func _ready():
-	$MarginContainer/VBoxContainer/VBoxContainer/StartBtn.grab_focus()
+	$StartBtn.grab_focus()
 	get_node("/root/Hud").SET_SCREEN_NAME("TitleScreen")
 #	var player = AudioStreamPlayer.new()
 #	self.add_child(player)
@@ -10,14 +10,14 @@ func _ready():
 #	get_node("/root/HUD").update_level(1)
 
 func _physics_process(delta):
-	if $MarginContainer/VBoxContainer/VBoxContainer/StartBtn.is_hovered() == true:
-		$MarginContainer/VBoxContainer/VBoxContainer/StartBtn.grab_focus()
-	if $MarginContainer/VBoxContainer/VBoxContainer/ControlBtn.is_hovered() == true:
-		$MarginContainer/VBoxContainer/VBoxContainer/ControlBtn.grab_focus()
-	if $MarginContainer/VBoxContainer/VBoxContainer/CreditBtn.is_hovered() == true:
-		$MarginContainer/VBoxContainer/VBoxContainer/CreditBtn.grab_focus()
-	if $MarginContainer/VBoxContainer/VBoxContainer/ExitBtn.is_hovered() == true:
-		$MarginContainer/VBoxContainer/VBoxContainer/ExitBtn.grab_focus()
+	if $StartBtn.is_hovered() == true:
+		$StartBtn.grab_focus()
+	if $ControlBtn.is_hovered() == true:
+		$ControlBtn.grab_focus()
+	if $CreditBtn.is_hovered() == true:
+		$CreditBtn.grab_focus()
+	if $ExitBtn.is_hovered() == true:
+		$ExitBtn.grab_focus()
 
 func _on_StartBtn_pressed():
 	get_node("/root/Hud").SET_SCREEN_NAME("Level")
