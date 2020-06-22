@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/creditsScreen.png-b4b5be046ec57fa7e68505d1f8922432.stex"
+path="res://.import/mainmenuF.png-366c2fe8baf385d20f9b2527fafd2509.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/CreditScreen/creditsScreen.png"
-dest_files=[ "res://.import/creditsScreen.png-b4b5be046ec57fa7e68505d1f8922432.stex" ]
+source_file="res://Globals/mainmenuF.png"
+dest_files=[ "res://.import/mainmenuF.png-366c2fe8baf385d20f9b2527fafd2509.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

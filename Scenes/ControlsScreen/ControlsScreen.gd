@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	$MarginContainer/BG/BackBtn.grab_focus()
+	$BackBtn.grab_focus()
 
 func _on_BackBtn_pressed():
 	if (get_node("/root/Hud").GET_SCREEN_NAME() == "PauseScreen"):
