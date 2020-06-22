@@ -156,6 +156,7 @@ z_index = 0
 
 [node name="Sniper" parent="." instance=ExtResource( 5 )]
 position = Vector2( 661.355, 93.5107 )
+z_index = 1
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.155, 99.723 )

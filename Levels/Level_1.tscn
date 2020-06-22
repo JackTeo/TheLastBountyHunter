@@ -81,10 +81,12 @@ scale = Vector2( 1, 1.00431 )
 [node name="Sniper" parent="." instance=ExtResource( 5 )]
 light_mask = 4
 position = Vector2( 544.044, 115.235 )
+z_index = 1
 
 [node name="Sniper2" parent="." instance=ExtResource( 5 )]
 light_mask = 4
 position = Vector2( 623.356, 399.825 )
+z_index = 1
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 light_mask = 4

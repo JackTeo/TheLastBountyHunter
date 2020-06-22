@@ -64,6 +64,7 @@ z_index = 0
 
 [node name="Sniper" parent="." instance=ExtResource( 5 )]
 position = Vector2( 544.044, 115.235 )
+z_index = 1
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.155, 99.723 )
@@ -72,33 +73,43 @@ z_index = 0
 
 [node name="Sniper2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 210.971, 462.378 )
+z_index = 1
 
 [node name="Sniper4" parent="." instance=ExtResource( 5 )]
 position = Vector2( -147.538, 506.638 )
+z_index = 1
 
 [node name="Sniper5" parent="." instance=ExtResource( 5 )]
 position = Vector2( -81.1475, 117.147 )
+z_index = 1
 
 [node name="Sniper6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1476.82, 807.609 )
+z_index = 1
 
 [node name="Sniper7" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1600.75, 736.792 )
+z_index = 1
 
 [node name="Sniper8" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1529.93, 519.917 )
+z_index = 1
 
 [node name="Sniper9" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1153.72, 409.266 )
+z_index = 1
 
 [node name="Sniper10" parent="." instance=ExtResource( 5 )]
 position = Vector2( 669.182, 875.164 )
+z_index = 1
 
 [node name="Sniper11" parent="." instance=ExtResource( 5 )]
 position = Vector2( 277.827, 865.846 )
+z_index = 1
 
 [node name="Sniper3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 608.469, 488.19 )
+z_index = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
