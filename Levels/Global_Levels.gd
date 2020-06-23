@@ -7,6 +7,7 @@ func _ready():
 	set_camera_limits()
 	player.connect('shoot', self, 'onGunShoot')
 	Input.set_custom_mouse_cursor(load("res://Assets/UI/crossair_white.png"), Input.CURSOR_ARROW, Vector2(8, 0))
+	get_node("/root/Hud").SET_SCREEN_NAME("Level")
 
 func set_camera_limits():
 	var map_limits = $TileMap.get_used_rect()

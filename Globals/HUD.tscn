@@ -172,6 +172,33 @@ __meta__ = {
 position = Vector2( 625, 370 )
 texture = ExtResource( 5 )
 
+[node name="ResumeBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
+margin_left = 552.0
+margin_top = 304.0
+margin_right = 706.0
+margin_bottom = 344.0
+texture_normal = ExtResource( 12 )
+texture_focused = ExtResource( 13 )
+
+[node name="RestartBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
+margin_left = 536.0
+margin_top = 352.0
+margin_right = 717.0
+margin_bottom = 392.0
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 7 )
+
+[node name="MainMenuBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
+margin_left = 512.0
+margin_top = 400.0
+margin_right = 744.0
+margin_bottom = 435.0
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ControlBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
 margin_left = 520.0
 margin_top = 448.0
@@ -182,33 +209,8 @@ texture_focused = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="MainMenuBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
-margin_left = 512.0
-margin_top = 400.0
-margin_right = 741.0
-margin_bottom = 432.0
-texture_normal = ExtResource( 8 )
-texture_focused = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RestartBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
-margin_left = 536.0
-margin_top = 352.0
-margin_right = 714.0
-margin_bottom = 392.0
-texture_normal = ExtResource( 6 )
-texture_focused = ExtResource( 7 )
-
-[node name="ResumeBtn" type="TextureButton" parent="PauseLayer/Pause/BlackOverlay"]
-margin_left = 552.0
-margin_top = 304.0
-margin_right = 703.0
-margin_bottom = 344.0
-texture_normal = ExtResource( 12 )
-texture_focused = ExtResource( 13 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ControlBtn" to="." method="_on_ControlBtn_pressed"]
+[connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
+[connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/RestartBtn" to="." method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
+[connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ControlBtn" to="." method="_on_ControlBtn_pressed"]

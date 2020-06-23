@@ -12,6 +12,7 @@
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1209, 309 )
 
 [node name="IntroScene" type="Node"]
 script = ExtResource( 2 )

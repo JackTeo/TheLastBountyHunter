@@ -60,14 +60,19 @@ func SET_SCREEN_NAME(name):
 	SCREEN_NAME = name
 
 func BACK_TO_PAUSE():
-	$PauseLayer/Pause/BlackOverlay.visible = true
-	$PauseLayer/Pause/BlackOverlay/ControlBtn.grab_focus()
+#	$PauseLayer/Pause/BlackOverlay.visible = true
+	$PauseLayer/Pause/BlackOverlay/ResumeBtn.grab_focus()
 
-func _on_ControlBtn_pressed():
-	SET_SCREEN_NAME("PauseScreen")
-	$PauseLayer/Pause/BlackOverlay.visible = false
-	var a = CONTROL_SCREEN.instance()
-	$PauseLayer/Pause/BlackOverlay.add_child(a)
+
+func _on_ResumeBtn_pressed():
+	get_tree().paused = false
+	$PauseLayer/Pause.visible = false
+
+
+func _on_RestartBtn_pressed():
+	HUD_reset()
+	get_node("/root/Hud").Start_Timer()
+	get_tree().change_scene("res://Levels/Level_1.tscn")
 
 
 func _on_MainMenuBtn_pressed():
@@ -75,4 +80,12 @@ func _on_MainMenuBtn_pressed():
 	get_tree().paused = false
 	$PauseLayer/Pause.visible = false
 	get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+
+
+func _on_ControlBtn_pressed():
+	SET_SCREEN_NAME("ControlScreen")
+#	$PauseLayer/Pause/BlackOverlay.visible = false
+	var a = CONTROL_SCREEN.instance()
+	$PauseLayer/Pause/BlackOverlay.add_child(a)
+
 

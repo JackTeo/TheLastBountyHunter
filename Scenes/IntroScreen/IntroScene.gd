@@ -19,6 +19,7 @@ onready var pNode1 = get_node("Person1") #to add a person sprite
 onready var pNode2 = get_node("Person2") #to add a person sprite
 
 func _ready():
+	get_node("/root/Hud").SET_SCREEN_NAME("IntroScreen")
 	$Panel/HBoxContainer/NextBtn.grab_focus()
 	pNode1.texture = person1
 	pNode2.texture = person2

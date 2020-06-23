@@ -2,6 +2,7 @@ extends Node
 
 func _ready():
 	$MarginContainer/VBoxContainer/VBoxContainer/RestartBtn.grab_focus()
+	get_node("/root/Hud").SET_SCREEN_NAME("DeadScreen")
 
 func _physics_process(delta):
 	if $MarginContainer/VBoxContainer/VBoxContainer/RestartBtn.is_hovered() == true:
