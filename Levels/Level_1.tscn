@@ -93,7 +93,7 @@ position = Vector2( 623.356, 399.825 )
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
 light_mask = 4
-position = Vector2( 104.155, 99.723 )
+position = Vector2( 128.213, 486.503 )
 rotation = 2.92538
 gun_cooldown = 0.1
 rotation_speed = 20.0
@@ -108,7 +108,8 @@ position = Vector2( 143.951, 142.415 )
 position = Vector2( 146.143, 361.801 )
 
 [node name="Portal" parent="." instance=ExtResource( 6 )]
-position = Vector2( 415.823, 469.148 )
+position = Vector2( 1200.06, 2.81911 )
+next_stage = "res://Levels/Level_2.tscn"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

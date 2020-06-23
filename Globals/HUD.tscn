@@ -19,7 +19,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "dead_animation"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("DeadLayer/Dead:modulate")
 tracks/0/interp = 1
@@ -27,10 +27,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="HUD" type="CanvasLayer"]
@@ -233,7 +233,7 @@ __meta__ = {
 
 [node name="Dead" type="Control" parent="DeadLayer"]
 pause_mode = 2
-visible = false
+modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -245,6 +245,7 @@ position = Vector2( 640, 352 )
 texture = ExtResource( 15 )
 
 [node name="BlackOverlay" type="ColorRect" parent="DeadLayer/Dead"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
@@ -292,6 +293,9 @@ __meta__ = {
 
 [node name="DeadAnimation" type="AnimationPlayer" parent="."]
 anims/dead_animation = SubResource( 1 )
+
+[node name="DeadTimer" type="Timer" parent="DeadAnimation"]
+wait_time = 2.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/RestartBtn" to="." method="_on_RestartBtn_pressed"]

@@ -29,19 +29,20 @@ func shoot():
 		$AnimationPlayer.play("muzzle_flash")
 
 func take_damage(amount):
-	isHurt = true
-	$Body/isHurt_Timer.stop()
-	$Body/isHurt_Timer.start()
-	health -= amount
-	$Body/isHurt_anime.play("isHurt")
-	if health <= 0:
-		if get_node(".").name == "Player":
-			dead()
-		else:
-			explode()
-	elif health <= 40:
-		$Body/isHurt_anime.get_animation("isHurt").length = 0.5
-		$Body/isHurt_anime.get_animation("isHurt").step = 0.25
+	if isDead == false:
+		isHurt = true
+		$Body/isHurt_Timer.stop()
+		$Body/isHurt_Timer.start()
+		health -= amount
+		$Body/isHurt_anime.play("isHurt")
+		if health <= 0:
+			if get_node(".").name == "Player":
+				dead()
+			else:
+				explode()
+		elif health <= 40:
+			$Body/isHurt_anime.get_animation("isHurt").length = 0.5
+			$Body/isHurt_anime.get_animation("isHurt").step = 0.25
 
 func dead():
 	if (get_node("/root/Hud").update_lives() > 0):
@@ -52,10 +53,10 @@ func dead():
 		health = initial_health
 		yield(get_tree().create_timer($DeadTimer.wait_time),"timeout")
 		isDead = false
-	if (get_node("/root/Hud").update_lives() > 0):
+	else:
 		$AnimationPlayer.play("play_dead")
 		isDead = true
-		yield(get_tree().create_timer($DeadTimer.wait_time),"timeout")
+		yield(get_tree().create_timer($DeadLayerTimer.wait_time),"timeout")
 		get_node("/root/Hud").DEAD_LAYER()
 
 func explode():

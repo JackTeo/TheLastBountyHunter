@@ -9,6 +9,7 @@ var minutes = 0
 var pause
 var SCREEN_NAME
 var LEVEL_LOCATION
+var DEAD_LAYER = false
 
 const CONTROL_SCREEN = preload("res://Scenes/ControlsScreen/ControlsScreen.tscn")
 
@@ -22,6 +23,12 @@ func _physics_process(delta):
 		$PauseLayer/Pause/BlackOverlay/MainMenuBtn.grab_focus()
 	if $PauseLayer/Pause/BlackOverlay/ControlBtn.is_hovered() == true:
 		$PauseLayer/Pause/BlackOverlay/ControlBtn.grab_focus()
+#	if $DeadLayer/Dead/BlackOverlay/RestartBtn.is_hovered() == true:
+#		$DeadLayer/Dead/BlackOverlay/RestartBtn.grab_focus()
+#	if $DeadLayer/Dead/BlackOverlay/MainMenuBtn.is_hovered() == true:
+#		$DeadLayer/Dead/BlackOverlay/MainMenuBtn.grab_focus()
+#	if $DeadLayer/Dead/BlackOverlay/ExitBtn.is_hovered() == true:
+#		$DeadLayer/Dead/BlackOverlay/ExitBtn.grab_focus()
 		
 func _process(delta):
 	if pause == false or initial_Timer > 0:
@@ -68,8 +75,16 @@ func SET_SCREEN_NAME(name):
 func BACK_TO_PAUSE():
 	$PauseLayer/Pause/BlackOverlay/ResumeBtn.grab_focus()
 
+func GET_DEAD_LAYER_STATUS():
+	return DEAD_LAYER
+
 func DEAD_LAYER():
-	pass
+	DEAD_LAYER = true
+	$DeadAnimation.play("dead_animation")
+	yield(get_tree().create_timer($DeadAnimation/DeadTimer.wait_time),"timeout")
+	get_tree().paused = true
+	$DeadLayer/Dead/BlackOverlay.visible = true
+	$DeadLayer/Dead/BlackOverlay/RestartBtn.grab_focus()
 
 
 func _on_ResumeBtn_pressed():
@@ -78,18 +93,32 @@ func _on_ResumeBtn_pressed():
 
 
 func _on_RestartBtn_pressed():
+	if DEAD_LAYER == false:
+		$PauseLayer/Pause.visible = false
+	else:
+		DEAD_LAYER = false
+		$DeadLayer/Dead.modulate = "00ffffff"
+		$DeadLayer/Dead/BlackOverlay.visible = false
 	HUD_reset()
 	Start_Timer()
 	get_tree().paused = false
-	$PauseLayer/Pause.visible = false
 	get_tree().change_scene("res://Levels/Level_1.tscn")
-	
+	$"SMargin/L-Container/Lives2".self_modulate = "ffffff"
+	$"SMargin/L-Container/Lives3".self_modulate = "ffffff"
+
 
 func _on_MainMenuBtn_pressed():
+	if DEAD_LAYER == false:
+		$PauseLayer/Pause.visible = false
+	else:
+		DEAD_LAYER = false
+		$DeadLayer/Dead.modulate = "00ffffff"
+		$DeadLayer/Dead/BlackOverlay.visible = false
 	HUD_reset()
 	get_tree().paused = false
-	$PauseLayer/Pause.visible = false
 	get_tree().change_scene("res://Scenes/TitleScreen/TitleScreen.tscn")
+	$"SMargin/L-Container/Lives2".self_modulate = "ffffff"
+	$"SMargin/L-Container/Lives3".self_modulate = "ffffff"
 
 
 func _on_ControlBtn_pressed():

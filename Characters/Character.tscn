@@ -130,6 +130,9 @@ animation = "smoke"
 
 [node name="DeadTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="DeadLayerTimer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="timeout" from="Body/isHurt_Timer" to="." method="_on_isHurt_Timer_timeout"]
 [connection signal="timeout" from="Body/notHurt_Timer" to="." method="_on_notHurt_Timer_timeout"]
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
