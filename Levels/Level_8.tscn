@@ -140,6 +140,7 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 14, 0, -65535, 14, 0, -65534, 14, 0
 
 [node name="Portal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1920.08, 0.962727 )
+next_stage = "res://Scenes/BossScreen/BossScene.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -10.6026, 971.24 )

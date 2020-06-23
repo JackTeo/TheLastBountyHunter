@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bullets/BossBullets.gd" type="Script" id=1]
+[ext_resource path="res://Bullets/Bullets.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Kenny/onlyObjects_retina_rotated.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 12 )
+
+[node name="BossBullets" instance=ExtResource( 2 )]
+collision_mask = 3
+script = ExtResource( 1 )
+speed = 300
+damage = 20
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+flip_h = true
+region_rect = Rect2( 388, 322, 32, 24 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )

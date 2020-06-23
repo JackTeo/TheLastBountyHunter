@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Characters/Player.gd" type="Script" id=1]
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Kenny/PNG/Hitman 1/hitman1_gun.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Kenny/PNG/Man Old/manOld_gun.png" type="Texture" id=3]
 [ext_resource path="res://Bullets/PlayerBullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Kenny/PNG/Hitman 1/hitman1_gun - Hurt.png" type="Texture" id=5]
 

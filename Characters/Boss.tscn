@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Characters/Boss.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bullets/BossBullets.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Kenny/PNG/Soldier 1/soldier1_machine.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Boss" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+Bullet = ExtResource( 3 )
+speed = 300
+health = 200
+gun_cooldown = 0.5
+rotation_speed = 50.0
+detect_radius = 800
+
+[node name="Body" parent="." index="0"]
+frames = SubResource( 1 )

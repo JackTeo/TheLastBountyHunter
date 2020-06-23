@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/IntroScreen/placeholder.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/BossScreen/BossScene.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/cibreo.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scenes/IntroScreen/introbg.jpg" type="Texture" id=4]
+[ext_resource path="res://Scenes/IntroScreen/chatbox.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/IntroScreen/next.PNG" type="Texture" id=6]
+[ext_resource path="res://Scenes/IntroScreen/skip.PNG" type="Texture" id=7]
+[ext_resource path="res://Scenes/IntroScreen/skipF.PNG" type="Texture" id=8]
+[ext_resource path="res://Scenes/IntroScreen/nextF.PNG" type="Texture" id=9]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 1209, 309 )
+
+[node name="BossScene" type="Node"]
+script = ExtResource( 2 )
+skip_to_scene = "res://Levels/Level_Boss.tscn"
+
+[node name="introbg" type="Sprite" parent="."]
+position = Vector2( 640, 416 )
+texture = ExtResource( 4 )
+
+[node name="Person1" type="Sprite" parent="."]
+position = Vector2( 251.791, 386.469 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Person2" type="Sprite" parent="."]
+position = Vector2( 1049.41, 386.469 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 39.5873
+margin_top = 392.574
+margin_right = -31.4127
+margin_bottom = -9.42639
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_left = 0.00136428
+anchor_top = -5.99795e-09
+anchor_right = 1.00136
+anchor_bottom = 1.0
+margin_left = 22.3506
+margin_top = 51.0
+margin_right = -34.6494
+margin_bottom = -79.0
+custom_fonts/normal_font = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "aasss"
+text = "aasss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+margin_left = 961.273
+margin_top = 268.236
+margin_right = 1453.27
+margin_bottom = 363.236
+rect_rotation = -7.5
+rect_scale = Vector2( 0.4, 0.4 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextBtn" type="TextureButton" parent="Panel/HBoxContainer"]
+margin_right = 255.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 9 )
+
+[node name="SkipBtn" type="TextureButton" parent="Panel/HBoxContainer"]
+margin_left = 275.0
+margin_right = 492.0
+margin_bottom = 95.0
+texture_normal = ExtResource( 7 )
+texture_focused = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="Panel/HBoxContainer/NextBtn" to="." method="_on_NextBtn_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/SkipBtn" to="." method="_on_SkipBtn_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
