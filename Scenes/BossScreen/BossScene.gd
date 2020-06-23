@@ -7,13 +7,18 @@ export (Texture) var person2
 var dialog_index = 0
 var finished = false
 var dialog = [
-	"In 2071, after a serious accident made the earth unsuitable for survival, humans have colonized most of the rocky planets and moons of the solar system.",
-	"With the increase in crime rates, the solar system police department established a legalized contract system in which registered bounty hunters pursued criminals in exchange for rewards.",
-	"The protagonist, Spike is an exiled former Yakuza Group killer. He and a former policeman, Yua formed a team to complete various tasks.",
-	"The focus of the main story is Spike and his deadly rival, Kato Hakase or Professor-K in short, an ambitious criminal affiliated with the Yakuza Group.",
-	"Spike and K used to be partners and friends, but K had great ambitions to develop the Yakuza Group into a terrorist organization.",
-	"In order to wipe out this terrorist organization, Yua ordered Spike to destroy K and get the bounty to complete the task."
+	"PROFESSOR K!!!!",
+	"I have been waiting for you…",
+	"And now, your death awaits!",
+	"I will not let your ambition come true!"
 	] # list of story lines
+
+var personName = [
+	"Spike",
+	"K",
+	"K",
+	"Spike"
+]
 
 onready var pNode1 = get_node("Person1") #to add a person sprite
 onready var pNode2 = get_node("Person2") #to add a person sprite
@@ -22,8 +27,6 @@ func _ready():
 	get_node("/root/Hud").Stop_Timer()
 	get_node("/root/Hud").SET_SCREEN_NAME("IntroScreen")
 	$Panel/HBoxContainer/NextBtn.grab_focus()
-	pNode1.texture = person1
-	pNode2.texture = person2
 	load_dialog()
 
 func _physics_process(delta):
@@ -37,8 +40,9 @@ func load_dialog():
 		finished = false
 		$Panel/RichTextLabel.bbcode_text = dialog[dialog_index]
 		$Panel/RichTextLabel.percent_visible = 0
+		$Panel/PersonLabel.bbcode_text = personName[dialog_index]
 		$Tween.interpolate_property(
-			$Panel/RichTextLabel, "percent_visible", 0, 1, 3,
+			$Panel/RichTextLabel, "percent_visible", 0, 1, 1,
 			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 		)
 		$Tween.start()

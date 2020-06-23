@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/CreditScreen/CreditScreen.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/BlackBG.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/BigJohn.tres" type="DynamicFont" id=3]
 
 [node name="CreditScreen" type="Node2D"]

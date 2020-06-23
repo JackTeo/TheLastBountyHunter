@@ -1,34 +1,47 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/WinScreen/WinScreen.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Background.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/TitleScreen/START-H.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/TitleScreen/START.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Fonts/BigJohn.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/WinScreen/nextF.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/WinScreen/WinScreen.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/WinScreen/next.png" type="Texture" id=5]
 
 [node name="WinScreen" type="Node"]
 script = ExtResource( 1 )
 
 [node name="Background" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 centered = false
 
 [node name="Label" type="Label" parent="."]
-margin_left = 484.634
-margin_top = 365.737
-margin_right = 524.634
-margin_bottom = 379.737
+margin_left = 741.686
+margin_top = 419.088
+margin_right = 884.686
+margin_bottom = 467.088
+custom_fonts/font = ExtResource( 2 )
 text = "99999"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextBtn" type="TextureButton" parent="."]
-margin_left = 794.455
-margin_top = 215.575
-margin_right = 1178.46
-margin_bottom = 276.575
-texture_normal = ExtResource( 11 )
-texture_focused = ExtResource( 4 )
+margin_left = 526.49
+margin_top = 587.816
+margin_right = 781.49
+margin_bottom = 671.816
+texture_normal = ExtResource( 5 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 373.736
+margin_top = 420.387
+margin_right = 701.736
+margin_bottom = 468.387
+custom_fonts/font = ExtResource( 2 )
+text = "Your Score:"
 __meta__ = {
 "_edit_use_anchors_": false
 }

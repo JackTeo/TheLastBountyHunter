@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/IntroScreen/placeholder.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Fonts/BigJohn.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/BossScreen/BossScene.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Fonts/cibreo.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scenes/IntroScreen/introbg.jpg" type="Texture" id=4]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/IntroScreen/skip.PNG" type="Texture" id=7]
 [ext_resource path="res://Scenes/IntroScreen/skipF.PNG" type="Texture" id=8]
 [ext_resource path="res://Scenes/IntroScreen/nextF.PNG" type="Texture" id=9]
+[ext_resource path="res://Scenes/BossScreen/K.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/BossScreen/Spike.png" type="Texture" id=11]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
@@ -23,15 +25,14 @@ position = Vector2( 640, 416 )
 texture = ExtResource( 4 )
 
 [node name="Person1" type="Sprite" parent="."]
-position = Vector2( 251.791, 386.469 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+position = Vector2( 256.279, 392.079 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 11 )
 flip_h = true
 
 [node name="Person2" type="Sprite" parent="."]
 position = Vector2( 1049.41, 386.469 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 1 )
+texture = ExtResource( 10 )
 flip_h = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -59,6 +60,17 @@ custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 bbcode_text = "aasss"
 text = "aasss"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PersonLabel" type="RichTextLabel" parent="Panel"]
+margin_left = 78.0
+margin_top = 3.0
+margin_right = 362.0
+margin_bottom = 56.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Spike"
 __meta__ = {
 "_edit_use_anchors_": false
 }
