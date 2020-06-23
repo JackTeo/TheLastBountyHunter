@@ -52,6 +52,11 @@ func dead():
 		health = initial_health
 		yield(get_tree().create_timer($DeadTimer.wait_time),"timeout")
 		isDead = false
+	if (get_node("/root/Hud").update_lives() > 0):
+		$AnimationPlayer.play("play_dead")
+		isDead = true
+		yield(get_tree().create_timer($DeadTimer.wait_time),"timeout")
+		get_node("/root/Hud").DEAD_LAYER()
 
 func explode():
 	$Body.hide()

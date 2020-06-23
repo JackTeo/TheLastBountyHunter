@@ -35,11 +35,6 @@ func update_lives():
 	lives -= 1
 	if lives == 0:
 		$Timer.stop()
-		layer = -10
-		lives = 3
-		$"SMargin/L-Container/Lives2".self_modulate = "ffffff"
-		$"SMargin/L-Container/Lives3".self_modulate = "ffffff"
-		get_tree().change_scene("res://Scenes/DeadScreen/DeadScreen.tscn")
 	elif lives == 1:
 		$"SMargin/L-Container/Lives2".self_modulate = "00ffffff"
 		$"SMargin/L-Container/Lives3".self_modulate = "00ffffff"
@@ -70,11 +65,11 @@ func GET_SCREEN_NAME():
 func SET_SCREEN_NAME(name):
 	SCREEN_NAME = name
 
-#func SET_LOCATION(value):
-#	LEVEL_LOCATION = value
-
 func BACK_TO_PAUSE():
 	$PauseLayer/Pause/BlackOverlay/ResumeBtn.grab_focus()
+
+func DEAD_LAYER():
+	pass
 
 
 func _on_ResumeBtn_pressed():
@@ -103,3 +98,5 @@ func _on_ControlBtn_pressed():
 	$PauseLayer/Pause/BlackOverlay.add_child(a)
 
 
+func _on_ExitBtn_pressed():
+	get_tree().quit()
