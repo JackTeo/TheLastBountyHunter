@@ -18,7 +18,11 @@ var isDead = false
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	initial_health = health
-#	$".".position = respawn_location
+
+func _physics_process(delta):
+	if get_node("/root/Hud").Get_Timer() <= 0:
+		isDead = true
+		get_node("/root/Hud").DEAD_LAYER()
 
 func shoot():
 	if can_shoot:

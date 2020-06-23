@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var lives = 3
 var scores = 0
-var initial_Timer = 3000
+var initial_Timer = 100
 var milliseconds = 0
 var seconds = 0
 var minutes = 0
@@ -31,7 +31,7 @@ func _physics_process(delta):
 #		$DeadLayer/Dead/BlackOverlay/ExitBtn.grab_focus()
 		
 func _process(delta):
-	if pause == false or initial_Timer > 0:
+	if pause == false or initial_Timer >= 0:
 		minutes = initial_Timer / 10 / 60
 		seconds = initial_Timer / 10 % 60
 		milliseconds = initial_Timer % 10
@@ -65,6 +65,16 @@ func HUD_reset():
 func Start_Timer():
 	layer = 1
 	$Timer.start()
+
+func Stop_Timer():
+	layer = -10
+	$Timer.stop()
+
+func Get_Timer():
+	return initial_Timer
+
+func add_mins():
+	initial_Timer += 600
 
 func GET_SCREEN_NAME():
 	return SCREEN_NAME
