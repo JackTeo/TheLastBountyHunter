@@ -42,3 +42,20 @@ func shoot():
 		emit_signal('shoot', Bullet, $Body/Muzzle.global_position, dir)
 		$AnimationPlayer.play("muzzle_flash")
 		get_node("/root/Hud").update_scores(-10)
+
+func take_damage(amount):
+	if isDead == false:
+		isHurt = true
+		$Body/isHurt_Timer.stop()
+		$Body/isHurt_Timer.start()
+		health -= amount
+		get_node("/root/Hud").update_scores(-10)
+		$Body/isHurt_anime.play("isHurt")
+		if health <= 0:
+			if get_node(".").name == "Player":
+				dead()
+			else:
+				explode()
+		elif health <= 40:
+			$Body/isHurt_anime.get_animation("isHurt").length = 0.5
+			$Body/isHurt_anime.get_animation("isHurt").step = 0.25

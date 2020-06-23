@@ -15,9 +15,9 @@ animations = [ {
 [node name="Sniper" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 speed = 50
-gun_cooldown = 5.0
-rotation_speed = 8.0
-detect_radius = 500
+gun_cooldown = 3.0
+rotation_speed = 20.0
+detect_radius = 800
 
 [node name="Body" parent="." index="0"]
 frames = SubResource( 1 )
