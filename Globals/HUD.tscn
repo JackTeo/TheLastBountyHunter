@@ -209,8 +209,63 @@ texture_focused = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DeadLayer" type="CanvasLayer" parent="."]
+
+[node name="Dead" type="Control" parent="DeadLayer"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlackOverlay" type="ColorRect" parent="DeadLayer/Dead"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeadSprite" type="Sprite" parent="DeadLayer/Dead/BlackOverlay"]
+position = Vector2( 625, 370 )
+texture = ExtResource( 5 )
+
+[node name="ExitBtn" type="TextureButton" parent="DeadLayer/Dead/BlackOverlay"]
+margin_left = 544.0
+margin_top = 304.0
+margin_right = 698.0
+margin_bottom = 344.0
+texture_normal = ExtResource( 12 )
+texture_focused = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartBtn" type="TextureButton" parent="DeadLayer/Dead/BlackOverlay"]
+margin_left = 536.0
+margin_top = 352.0
+margin_right = 717.0
+margin_bottom = 392.0
+texture_normal = ExtResource( 6 )
+texture_focused = ExtResource( 7 )
+
+[node name="MainMenuBtn" type="TextureButton" parent="DeadLayer/Dead/BlackOverlay"]
+margin_left = 512.0
+margin_top = 400.0
+margin_right = 744.0
+margin_bottom = 435.0
+texture_normal = ExtResource( 8 )
+texture_focused = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ResumeBtn" to="." method="_on_ResumeBtn_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/RestartBtn" to="." method="_on_RestartBtn_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
 [connection signal="pressed" from="PauseLayer/Pause/BlackOverlay/ControlBtn" to="." method="_on_ControlBtn_pressed"]
+[connection signal="pressed" from="DeadLayer/Dead/BlackOverlay/ExitBtn" to="." method="_on_ResumeBtn_pressed"]
+[connection signal="pressed" from="DeadLayer/Dead/BlackOverlay/RestartBtn" to="." method="_on_RestartBtn_pressed"]
+[connection signal="pressed" from="DeadLayer/Dead/BlackOverlay/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]

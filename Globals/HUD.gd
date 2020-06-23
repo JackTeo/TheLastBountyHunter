@@ -13,6 +13,16 @@ var LEVEL_LOCATION
 const CONTROL_SCREEN = preload("res://Scenes/ControlsScreen/ControlsScreen.tscn")
 
 
+func _physics_process(delta):
+	if $PauseLayer/Pause/BlackOverlay/ResumeBtn.is_hovered() == true:
+		$PauseLayer/Pause/BlackOverlay/ResumeBtn.grab_focus()
+	if $PauseLayer/Pause/BlackOverlay/RestartBtn.is_hovered() == true:
+		$PauseLayer/Pause/BlackOverlay/RestartBtn.grab_focus()
+	if $PauseLayer/Pause/BlackOverlay/MainMenuBtn.is_hovered() == true:
+		$PauseLayer/Pause/BlackOverlay/MainMenuBtn.grab_focus()
+	if $PauseLayer/Pause/BlackOverlay/ControlBtn.is_hovered() == true:
+		$PauseLayer/Pause/BlackOverlay/ControlBtn.grab_focus()
+		
 func _process(delta):
 	if pause == false or initial_Timer > 0:
 		minutes = initial_Timer / 10 / 60
