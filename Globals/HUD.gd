@@ -8,6 +8,7 @@ var seconds = 0
 var minutes = 0
 var pause
 var SCREEN_NAME
+var LEVEL_LOCATION
 
 const CONTROL_SCREEN = preload("res://Scenes/ControlsScreen/ControlsScreen.tscn")
 
@@ -59,8 +60,10 @@ func GET_SCREEN_NAME():
 func SET_SCREEN_NAME(name):
 	SCREEN_NAME = name
 
+#func SET_LOCATION(value):
+#	LEVEL_LOCATION = value
+
 func BACK_TO_PAUSE():
-#	$PauseLayer/Pause/BlackOverlay.visible = true
 	$PauseLayer/Pause/BlackOverlay/ResumeBtn.grab_focus()
 
 
@@ -71,9 +74,11 @@ func _on_ResumeBtn_pressed():
 
 func _on_RestartBtn_pressed():
 	HUD_reset()
-	get_node("/root/Hud").Start_Timer()
+	Start_Timer()
+	get_tree().paused = false
+	$PauseLayer/Pause.visible = false
 	get_tree().change_scene("res://Levels/Level_1.tscn")
-
+	
 
 func _on_MainMenuBtn_pressed():
 	HUD_reset()
@@ -84,7 +89,6 @@ func _on_MainMenuBtn_pressed():
 
 func _on_ControlBtn_pressed():
 	SET_SCREEN_NAME("ControlScreen")
-#	$PauseLayer/Pause/BlackOverlay.visible = false
 	var a = CONTROL_SCREEN.instance()
 	$PauseLayer/Pause/BlackOverlay.add_child(a)
 

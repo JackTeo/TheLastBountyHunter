@@ -7,7 +7,7 @@ export (int) var speed
 export (int) var health
 export (float) var gun_cooldown
 
-onready var location = $".".global_position
+onready var respawn_location = $".".global_position
 
 var initial_health = null
 var velocity = Vector2()
@@ -18,6 +18,7 @@ var isDead = false
 func _ready():
 	$GunTimer.wait_time = gun_cooldown
 	initial_health = health
+#	$".".position = respawn_location
 
 func shoot():
 	if can_shoot:
@@ -45,7 +46,7 @@ func take_damage(amount):
 func dead():
 	if (get_node("/root/Hud").update_lives() > 0):
 		$AnimationPlayer.play("play_dead")
-		$".".position = location
+		$".".position = respawn_location
 		isDead = true
 		$Body/isHurt_anime.stop()
 		health = initial_health
