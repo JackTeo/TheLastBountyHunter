@@ -7,6 +7,8 @@ func _input(event):
 				pass
 			elif (get_node("/root/Hud").GET_SCREEN_NAME() == "IntroScreen"):
 				pass
+			elif (get_node("/root/Hud").GET_SCREEN_NAME() == "WinScreen"):
+				pass
 			else:
 				var pause = not get_tree().paused
 				get_tree().paused = pause

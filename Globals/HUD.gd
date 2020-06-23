@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var lives = 3
 var scores = 0
-var initial_Timer = 100
+var initial_Timer = 3000
 var milliseconds = 0
 var seconds = 0
 var minutes = 0
@@ -12,6 +12,7 @@ var LEVEL_LOCATION
 var DEAD_LAYER = false
 
 const CONTROL_SCREEN = preload("res://Scenes/ControlsScreen/ControlsScreen.tscn")
+const PORTAL = preload("res://Mechanics/Portal.tscn")
 
 
 func _physics_process(delta):
@@ -38,6 +39,13 @@ func _process(delta):
 		$"SMargin/R-Container/Value".text = str(minutes).pad_zeros(2)+":"+str(seconds).pad_zeros(2)+":"+str(milliseconds)
 		$"SMargin/M-Container/Value".text = str(scores)
 
+#func boss_dead():
+#	yield(get_tree().create_timer($DeadAnimation/DeadTimer.wait_time),"timeout")
+#	var b = PORTAL.instance()
+#	b.
+#	$".".add_child(b)
+	
+
 func update_lives():
 	lives -= 1
 	if lives == 0:
@@ -52,6 +60,9 @@ func update_lives():
 
 func update_scores(value):
 	scores += value
+
+func GET_SCORES():
+	return scores
 
 func _on_Timer_timeout():
 	initial_Timer -= 1
