@@ -129,7 +129,10 @@ func add_line():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
-		finish()
+		if (get_node("/root/Hud").GET_SCREEN_NAME() == "WinScreen"):
+			pass
+		else:
+			finish()
 	if event.is_action_pressed("ui_down") and !event.is_echo():
 		speed_up = true
 	if event.is_action_released("ui_down") and !event.is_echo():

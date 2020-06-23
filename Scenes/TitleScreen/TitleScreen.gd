@@ -20,6 +20,7 @@ func _physics_process(delta):
 		$VBoxContainer/ExitBtn.grab_focus()
 
 func _on_StartBtn_pressed():
+	get_node("/root/Hud").HUD_reset()
 	get_node("/root/Hud").SET_SCREEN_NAME("Level")
 	get_tree().change_scene("res://Scenes/IntroScreen/IntroScene.tscn")
 

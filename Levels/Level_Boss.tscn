@@ -38,7 +38,6 @@ z_index = 0
 [node name="Boss" parent="." instance=ExtResource( 3 )]
 position = Vector2( 621, 146 )
 rotation = 1.51521
-z_index = 1
 
 [node name="Portal" parent="." instance=ExtResource( 5 )]
 visible = false

@@ -17,6 +17,7 @@ func take_damage(amount):
 				dead()
 			else:
 				explode()
+				get_node("/root/Hud").Stop_Timer()
 				get_tree().change_scene("res://Scenes/WinScreen/WinScreen.tscn")
 		elif health <= 40:
 			$Body/isHurt_anime.get_animation("isHurt").length = 0.5
