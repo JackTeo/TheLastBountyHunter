@@ -11,4 +11,5 @@ func _ready():
 
 func _on_Coin_body_entered(body):
 	get_node("/root/Hud").update_scores(100)
+	get_node("/root/Hud").coin_sfx()
 	queue_free()

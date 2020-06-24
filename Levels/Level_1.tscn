@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Characters/Sniper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Mechanics/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Mechanics/Coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/music/level34.wav" type="AudioStream" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -168,6 +169,11 @@ position = Vector2( 415.68, 547.728 )
 
 [node name="Coin6" parent="." instance=ExtResource( 7 )]
 position = Vector2( 467.249, 549.291 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -6.0
+autoplay = true
 [connection signal="shoot" from="Paths/Path2D/PathFollow2D/Enemy" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper" to="." method="onGunShoot"]
 [connection signal="shoot" from="Sniper2" to="." method="onGunShoot"]

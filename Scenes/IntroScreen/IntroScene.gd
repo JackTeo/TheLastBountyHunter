@@ -19,6 +19,10 @@ onready var pNode1 = get_node("Person1") #to add a person sprite
 onready var pNode2 = get_node("Person2") #to add a person sprite
 
 func _ready():
+#	var player = AudioStreamPlayer.new()
+#	self.add_child(player)
+#	player.stream = load("res://Assets/music/theme.wav")
+#	player.play()
 	get_node("/root/Hud").SET_SCREEN_NAME("IntroScreen")
 	$Panel/HBoxContainer/NextBtn.grab_focus()
 	pNode1.texture = person1

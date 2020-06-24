@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level78.wav-e28b49232510704993d746d7a9a49815.sample"
+
+[deps]
+
+source_file="res://Assets/music/level78.wav"
+dest_files=[ "res://.import/level78.wav-e28b49232510704993d746d7a9a49815.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

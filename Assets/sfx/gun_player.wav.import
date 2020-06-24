@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/gun_player.wav-6a1931646a7b8ed4650de7d32af8af97.sample"
+
+[deps]
+
+source_file="res://Assets/sfx/gun_player.wav"
+dest_files=[ "res://.import/gun_player.wav-6a1931646a7b8ed4650de7d32af8af97.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

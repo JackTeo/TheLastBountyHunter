@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/IntroScreen/placeholder.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/IntroScreen/IntroScene.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/IntroScreen/skip.PNG" type="Texture" id=7]
 [ext_resource path="res://Scenes/IntroScreen/skipF.PNG" type="Texture" id=8]
 [ext_resource path="res://Scenes/IntroScreen/nextF.PNG" type="Texture" id=9]
+[ext_resource path="res://Assets/music/intro.wav" type="AudioStream" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
@@ -93,6 +94,11 @@ texture_normal = ExtResource( 7 )
 texture_focused = ExtResource( 8 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -6.0
+autoplay = true
 [connection signal="pressed" from="Panel/HBoxContainer/NextBtn" to="." method="_on_NextBtn_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/SkipBtn" to="." method="_on_SkipBtn_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

@@ -41,11 +41,21 @@ func shoot():
 		var dir = Vector2(1, 0).rotated($Body.global_rotation - 0.01)
 		emit_signal('shoot', Bullet, $Body/Muzzle.global_position, dir)
 		$AnimationPlayer.play("muzzle_flash")
+		var player = AudioStreamPlayer.new()
+		self.add_child(player)
+		player.stream = load("res://Assets/sfx/gun_player.wav")
+		player.volume_db = -12
+		player.play()
 		get_node("/root/Hud").update_scores(-10)
 
 func take_damage(amount):
 	if isDead == false:
 		isHurt = true
+		var player = AudioStreamPlayer.new()
+		self.add_child(player)
+		player.stream = load("res://Assets/sfx/gun-1a.wav")
+		player.volume_db = -12
+		player.play()
 		$Body/isHurt_Timer.stop()
 		$Body/isHurt_Timer.start()
 		health -= amount

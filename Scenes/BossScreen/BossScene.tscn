@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Fonts/BigJohn.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scenes/BossScreen/BossScene.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/IntroScreen/nextF.PNG" type="Texture" id=9]
 [ext_resource path="res://Scenes/BossScreen/K.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/BossScreen/Spike.png" type="Texture" id=11]
+[ext_resource path="res://Assets/music/boss.wav" type="AudioStream" id=12]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 5 )
@@ -103,6 +104,11 @@ texture_normal = ExtResource( 7 )
 texture_focused = ExtResource( 8 )
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -6.0
+autoplay = true
 [connection signal="pressed" from="Panel/HBoxContainer/NextBtn" to="." method="_on_NextBtn_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/SkipBtn" to="." method="_on_SkipBtn_pressed"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

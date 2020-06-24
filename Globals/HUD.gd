@@ -39,11 +39,12 @@ func _process(delta):
 		$"SMargin/R-Container/Value".text = str(minutes).pad_zeros(2)+":"+str(seconds).pad_zeros(2)+":"+str(milliseconds)
 		$"SMargin/M-Container/Value".text = str(scores)
 
-#func boss_dead():
-#	yield(get_tree().create_timer($DeadAnimation/DeadTimer.wait_time),"timeout")
-#	var b = PORTAL.instance()
-#	b.
-#	$".".add_child(b)
+func coin_sfx():
+	var player = AudioStreamPlayer.new()
+	self.add_child(player)
+	player.stream = load("res://Assets/sfx/coin.wav")
+	player.volume_db = -12
+	player.play()
 	
 
 func update_lives():

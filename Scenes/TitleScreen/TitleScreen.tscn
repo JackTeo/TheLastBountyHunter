@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/TitleScreen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Background.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Scenes/TitleScreen/CREDITs.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/TitleScreen/START.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/TitleScreen/bar.png" type="Texture" id=12]
+[ext_resource path="res://Assets/music/theme.wav" type="AudioStream" id=13]
 
 [node name="TitleScreen" type="Node"]
 script = ExtResource( 1 )
@@ -79,6 +80,11 @@ texture_focused = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = -6.0
+autoplay = true
 [connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/ControlBtn" to="." method="_on_ControlBtn_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditBtn" to="." method="_on_CreditBtn_pressed"]

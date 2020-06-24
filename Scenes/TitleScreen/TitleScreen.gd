@@ -5,7 +5,7 @@ func _ready():
 	get_node("/root/Hud").SET_SCREEN_NAME("TitleScreen")
 #	var player = AudioStreamPlayer.new()
 #	self.add_child(player)
-#	player.stream = load("res://Assets/Audio/bgm_title.wav")
+#	player.stream = load("res://Assets/music/theme.wav")
 #	player.play()
 #	get_node("/root/HUD").update_level(1)
 
