@@ -68,7 +68,12 @@ var credits = [
 		"https://godotengine.org/license","",
 		"","",
 		"Art by Kenny","",
-		"https://www.kenney.nl/",""
+		"https://www.kenney.nl/","",
+		"","",
+		"Music made using Auxy","",
+		"https://www.auxy.co/",""
+	],[
+		"Thank you so much for playing!",""
 	]
 ]
 

@@ -18,6 +18,8 @@ _global_script_class_icons={
 config/name="The_Last_Bounty_Hunter"
 run/main_scene="res://Scenes/TitleScreen/TitleScreen.tscn"
 config/icon="res://unnamed.png"
+config/macos_native_icon="res://unnamed.png"
+config/windows_native_icon="res://unnamed.png"
 
 [autoload]
 
