@@ -22,7 +22,15 @@ func _physics_process(delta):
 		if Input.is_action_pressed("left_click"):
 			shoot()
 	
-		$Body.look_at(get_global_mouse_position())
+		# disable for mobile use
+#		$Body.look_at(get_global_mouse_position()
+		
+		var rot_dir = 0
+		if Input.is_action_pressed('turn_right'):
+			rot_dir += 1
+		if Input.is_action_pressed('turn_left'):
+			rot_dir -= 1
+		rotation += 5 * rot_dir * delta
 
 func apply_friction(amount):
 	if motion.length() > amount:
