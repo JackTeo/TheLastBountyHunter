@@ -23,7 +23,7 @@ func _physics_process(delta):
 			shoot()
 	
 		# disable for mobile use
-#		$Body.look_at(get_global_mouse_position()
+		$Body.look_at(get_global_mouse_position())
 		
 		var rot_dir = 0
 		if Input.is_action_pressed('turn_right'):
